@@ -21,6 +21,7 @@
                                     <li><a href="products.add">Add</a></li>
                                 </ul>
                             </li>
+                            <li><a href="categories"><i class="fa fa-object-group"></i> <span>Categories</span></a></li>
                             <li><a href="orders"><i class="fa fa-list-ol"></i> <span>Orders</span></a></li>
                             <li><a href="payments"><i class="fa fa-dollar"></i> <span>Payments</span></a></li>
                         </ul>
