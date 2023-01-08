@@ -1,4 +1,4 @@
-<?php
+<?php ini_set("memory_limit","2048M");
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('{test}', function ($test) {
-    return view('admin.' . $test);
+    return view($test);
 });
 
 Auth::routes();

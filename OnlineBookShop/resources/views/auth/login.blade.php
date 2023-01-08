@@ -7,8 +7,7 @@
             <div class="login-box ptb--100">
                 <form>
                     <div class="login-form-head">
-                        <h4>Sign In</h4>
-                        <p>Hello there, Sign in and start managing your Admin Template</p>
+                        <h4>Log in</h4>
                     </div>
                     <div class="login-form-body">
                         <div class="form-gp">
@@ -26,11 +25,10 @@
                         <div class="row mb-4 rmber-area">
                             <div class="col-6">
                                 <div class="custom-control custom-checkbox mr-sm-2">
-                                    <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                                    <label class="custom-control-label" for="customControlAutosizing">Remember Me</label>
+                                    <input type="checkbox" class="custom-control-input" id="customControlAutosizing"><span> Remember Me</span>
                                 </div>
                             </div>
-                            <div class="col-6 text-right">
+                            <div class="col-6 text">
                                 <a href="#">Forgot Password?</a>
                             </div>
                         </div>
@@ -47,3 +45,4 @@
     </div>
     <!-- login area end -->
 @endsection
+
