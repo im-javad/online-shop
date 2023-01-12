@@ -12,8 +12,8 @@ trait HasCategory{
      */ 
     public function validateAddForm(Request $request){
         return $request->validate([
-            'slug' => 'required | unique:categories,slug',
-            'title' => 'required | unique:categories,title'
+            'slug' => 'required | unique:categories,slug | max:50',
+            'title' => 'required | unique:categories,title | max:50'
         ]);
     }
 }

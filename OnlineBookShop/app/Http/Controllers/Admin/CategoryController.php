@@ -34,7 +34,7 @@ class CategoryController extends Controller{
             'title' => $validator['title']
         ]);
 
-        return back()->with('simpleSuccessAlert' , 'Add new category successfully');
+        return back()->with('simpleSuccessAlert' , 'New product added successfully');
     }
 
     /**
@@ -51,7 +51,7 @@ class CategoryController extends Controller{
     /**
      * Show edit category form 
      *
-     * @param Category $category
+     * @param \App\Models\Category $category
      * @return void
      */
     public function edit(Category $category){
@@ -61,7 +61,7 @@ class CategoryController extends Controller{
     /**
      * Update a category 
      *
-     * @param Category $category
+     * @param \App\Models\Category $category
      * @return void
      */
     public function update(Category $category , Request $request){

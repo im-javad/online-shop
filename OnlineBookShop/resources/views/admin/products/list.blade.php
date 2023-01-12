@@ -8,27 +8,48 @@
             <thead class="table-dark">
               <tr>
                 <th>Id</th>
-                <th>Category</th>
                 <th>Title</th>
+                <th>Category</th>
                 <th>Description</th>
+                <th>Demo</th>
                 <th>Price</th>
                 <th>Built</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th>1</th>
-                <th>biography</th>
-                <th>Adolf hitler</th>
-                <th>This is a book about biography of heail hitler</th>
-                <th>$ 1954</th>
-                <th>1945/03/12</th>
-                <th><a href=""><span class="ti-trash"></span></a>|<a href=""><span class="ti-pencil"></span></a></th>
+              @foreach ($products as $product)
+                <tr>
+                  <th>{{ $product->id }}</th>
+                  <th>{{ $product->title }}</th>
+                  <th>{{ $product->category->title }}</th>
+                  <th>{{ substr($product->description , 0 , 15) . '...' }}</th>
+                  <th>
+                    <a href="{{ config('urls.images_products_url') . $product->demo_url }}" style="color: black;"><span class="ti-link"></span></a>
+                    |
+                    <a href="{{ route('admin.products.download.demo' , $product->id)}}" style="color: black;"><span class="ti-download"></span></a>
+                  </th>
+                  <th>${{ $product->price }}</th>
+                  <th>{{ $product->created_at }}</th>
+                  <th>
+                    <form action="{{ route('admin.products.destroy' , $product->id) }}" method="POST" style="display: inline;">
+                      @csrf
+                      @method('delete')
+                      <button type="submit" style="background: white; border: 0px;"><span class="ti-trash"></span></button>
+                    </form>
+                    |
+                    <a href="{{ route('admin.products.edit' , $product->id)}}" style="color: black"><span class="ti-pencil"></span></a>
+                  </th>
               </tr>
+            @endforeach
             </tbody>
           </table>
         <!-- Products list end -->
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            {{ $products->links() }}
+          </ul>
+        </nav>  
     </div>
 </div>
 @endsection

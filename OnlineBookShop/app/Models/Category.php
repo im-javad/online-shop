@@ -9,4 +9,15 @@ class Category extends Model{
     use HasFactory;
 
     protected $fillable = ['slug' , 'title'];
+
+    /**
+     * NTO1 relationship beet between category and product
+     *
+     * @return array
+     */
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
 }
+
+

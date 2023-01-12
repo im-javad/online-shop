@@ -17,11 +17,11 @@
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-cube"></i><span>Product Management</span></a>
                                 <ul class="collapse">
-                                    <li><a href="products.list">List</a></li>
-                                    <li><a href="products.add">Add</a></li>
+                                    <li><a href="{{ route('admin.products.all')}}">List</a></li>
+                                    <li><a href="{{ route('admin.products.create')}}">Add</a></li>
                                 </ul>
                             </li>
-                            <li><a href="categories"><i class="fa fa-object-group"></i> <span>Categories</span></a></li>
+                            <li><a href="{{ route('admin.categories.index') }}"><i class="fa fa-object-group"></i> <span>Categories</span></a></li>
                             <li><a href="orders"><i class="fa fa-list-ol"></i> <span>Orders</span></a></li>
                             <li><a href="payments"><i class="fa fa-dollar"></i> <span>Payments</span></a></li>
                         </ul>

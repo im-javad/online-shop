@@ -8,7 +8,7 @@
 {{-- Add category form start --}}
 <div class="col-12 mt-5"> 
     <div class="card">
-      <form action="{{ route('categories.storage') }}" method="POST">
+      <form action="{{ route('admin.categories.storage') }}" method="POST">
         @csrf
         <div class="card-body">
             <div class="row">
@@ -49,13 +49,13 @@
                   <th>{{ $category->title }}</th>
                   <th>{{ $category->created_at }}</th>
                   <th>
-                    <form action="{{ route('categories.destroy' , $category->id) }}" method="POST" style="display: inline;">
+                    <form action="{{ route('admin.categories.destroy' , $category->id) }}" method="POST" style="display: inline;">
                       @csrf
                       @method('delete')
                       <button type="submit" style="background: white; border: 0px;"><span class="ti-trash"></span></button>
                     </form>
                     |
-                    <a href="{{ route('categories.edit' , $category->id) }}" style="color: black"><span class="ti-pencil"></span></a>
+                    <a href="{{ route('admin.categories.edit' , $category->id) }}" style="color: black"><span class="ti-pencil"></span></a>
                   </th>
                 </tr>
               @endforeach

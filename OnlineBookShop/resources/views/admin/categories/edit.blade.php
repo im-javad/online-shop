@@ -8,7 +8,7 @@
 {{-- Edit category form start --}}
 <div class="col-12 mt-5">
     <div class="card">
-      <form action="{{ route('categories.update' , $category->id) }}" method="POST">
+      <form action="{{ route('admin.categories.update' , $category->id) }}" method="POST">
         @csrf
         @method('put')
         <div class="card-body">
