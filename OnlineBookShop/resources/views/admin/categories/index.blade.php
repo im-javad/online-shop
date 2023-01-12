@@ -49,13 +49,13 @@
                   <th>{{ $category->title }}</th>
                   <th>{{ $category->created_at }}</th>
                   <th>
-                    <form action="{{ route('admin.categories.destroy' , $category->id) }}" method="POST" style="display: inline;">
+                    <form action="{{ route('admin.categories.destroy' , $category->id) }}" method="POST" id='prepare-form'>
                       @csrf
                       @method('delete')
-                      <button type="submit" style="background: white; border: 0px;"><span class="ti-trash"></span></button>
+                      <button type="submit" id="button-delete"><span class="ti-trash"></span></button>
                     </form>
                     |
-                    <a href="{{ route('admin.categories.edit' , $category->id) }}" style="color: black"><span class="ti-pencil"></span></a>
+                    <a href="{{ route('admin.categories.edit' , $category->id) }}" id="a-black"><span class="ti-pencil"></span></a>
                   </th>
                 </tr>
               @endforeach

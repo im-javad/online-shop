@@ -3,6 +3,7 @@ namespace App\Services\Admin\Traits;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 trait HasProduct{
     /**
@@ -60,6 +61,7 @@ trait HasProduct{
 
         if(isset($validator['demo_url'])){
             $image_path = $validator['demo_url']->store('' , 'product_images_storage');
+            File::delete(public_path("\images\products\\$product->demo_url"));
             $product->update([
                 'demo_url' => $image_path,
             ]);

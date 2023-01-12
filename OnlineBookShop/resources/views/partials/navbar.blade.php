@@ -24,7 +24,7 @@
                                      </ul>
                                 </li>
                                 <li class="menu-item"><a class="nav-link" data-effect="Contact"></a></li>
-                                <li class="menu-item"><a href="#" class="nav-link" data-effect="Contact" style="color: #ff7100; font-weight: 750;">Guest</a></li>
+                                <li class="menu-item"><a href="#" class="nav-link" data-effect="Contact" id="user-status">Guest</a></li>
                             </ul>
                             <div class="hamburger">
                                 <span class="bar"></span>

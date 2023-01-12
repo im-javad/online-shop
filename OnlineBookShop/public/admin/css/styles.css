@@ -551,4 +551,23 @@
 
 /*-------------------- END 404 Page ------------------- */
 
+/*-------------------- Extra ------------------- */
+button#button-delete{
+    background: white; border: 0px;
+}
+
+a#a-black {
+    color: black;
+}
+
+form#prepare-form{
+    display: inline;
+}
+
+a#current-demo{
+    color: rgb(26, 158, 0); 
+    font-size: 18px; 
+    font-weight: 750;
+}
+/*-------------------- END Extra ------------------- */
 

@@ -71,7 +71,7 @@ class productController extends Controller{
 
         $this->doUpdate($product , $validator);
 
-        return back()->with('simpleSuccessAlert' , 'Product updated successfully');
+        return redirect()->route('admin.products.all')->with('simpleSuccessAlert' , 'Product updated successfully');
     }
 
     /**

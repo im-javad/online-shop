@@ -25,20 +25,20 @@
                   <th>{{ $product->category->title }}</th>
                   <th>{{ substr($product->description , 0 , 15) . '...' }}</th>
                   <th>
-                    <a href="{{ config('urls.images_products_url') . $product->demo_url }}" style="color: black;"><span class="ti-link"></span></a>
+                    <a href="{{ config('urls.images_products_url') . $product->demo_url }}" id="a-black"><span class="ti-link"></span></a>
                     |
-                    <a href="{{ route('admin.products.download.demo' , $product->id)}}" style="color: black;"><span class="ti-download"></span></a>
+                    <a href="{{ route('admin.products.download.demo' , $product->id)}}" id="a-black"><span class="ti-download"></span></a>
                   </th>
                   <th>${{ $product->price }}</th>
                   <th>{{ $product->created_at }}</th>
                   <th>
-                    <form action="{{ route('admin.products.destroy' , $product->id) }}" method="POST" style="display: inline;">
+                    <form action="{{ route('admin.products.destroy' , $product->id) }}" method="POST" id="prepare-form">
                       @csrf
                       @method('delete')
-                      <button type="submit" style="background: white; border: 0px;"><span class="ti-trash"></span></button>
+                      <button type="submit" id="button-delete"><span class="ti-trash"></span></button>
                     </form>
                     |
-                    <a href="{{ route('admin.products.edit' , $product->id)}}" style="color: black"><span class="ti-pencil"></span></a>
+                    <a href="{{ route('admin.products.edit' , $product->id)}}" id="a-black"><span class="ti-pencil"></span></a>
                   </th>
               </tr>
             @endforeach

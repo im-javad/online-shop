@@ -8,7 +8,7 @@
     <div class="card">
         <div class="card-body">
             <form action="{{ route('admin.products.store')}}" method="POST" enctype="multipart/form-data">
-                @csrf 
+            @csrf 
             <div class="row">
                 <div class="col">
                     <select name="category_id" class="form-control">

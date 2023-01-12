@@ -28,11 +28,11 @@
         <div class="card-body">
             <div class="row">
                 <div class="col">
-                    <textarea name="description" class="form-control" placeholder="Description" rows="1">{{ $product->description }}</textarea>
+                    <textarea name="description" class="form-control" placeholder="Description" rows="2">{{ $product->description }}</textarea>
                 </div>
                 <div class="col">
                     <input value="#" name="demo_url" class="form-control" type="file">
-                    <a href="{{ config('urls.images_products_url') . $product->demo_url }}" style="color: rgb(26, 158, 0); font-size: 18px; font-weight: 750;">current demo</span></a>
+                    <a href="{{ config('urls.images_products_url') . $product->demo_url }}" id="current-demo">current demo</span></a>
                 </div>
                 <div class="col">
                     <input value="{{ $product->price }}" name="price" class="form-control" placeholder="Price" type="numeric" aria-label="price">
@@ -47,3 +47,4 @@
 </div>
 {{-- Edit product form end --}}
 @endsection
+
