@@ -18,16 +18,26 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th>1</th>
-                <th>Javad Jadidi</th>
-                <th>javad@gmail.com</th>
-                <th>admin</th>
-                <th>0953826435</th>
-                <th>evrywhere at all of strets and bla bla bla 87 street p902</th>
-                <th>1954/03/12</th>
-                <th><a href=""><span class="ti-trash"></span></a>|<a href=""><span class="ti-pencil"></span></a></th>
-              </tr>
+              @foreach ($users as $user)
+                <tr>
+                  <th>{{ $user->id }}</th>
+                  <th>{{ $user->name }}</th>
+                  <th>{{ $user->email }}</th>
+                  <th>{{ $user->role }}</th>
+                  <th>{{ $user->phone_number }}</th>
+                  <th>{{ $user->address }}</th>
+                  <th>{{ $user->created_at }}</th>
+                  <th>
+                    <form action="{{ route('admin.users.destroy' , $user->id ) }}" method="POST" id="prepare-form">
+                      @csrf
+                      @method('delete')
+                      <button type="submit" id="button-delete"><span class="ti-trash"></span></button>
+                    </form>
+                    |
+                    <a href="{{ route('admin.users.edit' , $user->id) }}" id="a-black"><span class="ti-pencil"></span></a>
+                  </th>
+                </tr>
+              @endforeach
             </tbody>
           </table>
         <!-- Users list end -->

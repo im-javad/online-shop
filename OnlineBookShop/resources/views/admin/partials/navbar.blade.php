@@ -10,8 +10,8 @@
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-users"></i><span>User Management</span></a>
                                 <ul class="collapse">
-                                    <li><a href="users.list">List</a></li>
-                                    <li><a href="users.add">Add</a></li>
+                                    <li><a href="{{ route('admin.users.all') }}">List</a></li>
+                                    <li><a href="{{ route('admin.users.create') }}">Add</a></li>
                                 </ul>
                             </li>
                             <li>

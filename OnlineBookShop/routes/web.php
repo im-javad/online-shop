@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\productController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -27,7 +28,12 @@ Route::prefix('admin')->group(function(){
     });
     /* For users */
     Route::prefix('users')->group(function(){
-
+        Route::get('' , [UserController::class , 'all'])->name('admin.users.all');
+        Route::get('/create' , [UserController::class , 'create'])->name('admin.users.create');
+        Route::post('' , [UserController::class , 'store'])->name('admin.users.store');
+        Route::delete('/{user}/remove' , [UserController::class , 'destroy'])->name('admin.users.destroy');
+        Route::get('/{user}/edit' , [UserController::class , 'edit'])->name('admin.users.edit');
+        Route::put('/{user}/update' , [UserController::class , 'update'])->name('admin.users.update');
     });
 });
 
