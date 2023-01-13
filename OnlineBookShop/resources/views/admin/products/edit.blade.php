@@ -34,11 +34,21 @@
                     <input value="#" name="demo_url" class="form-control" type="file">
                     <a href="{{ config('urls.images_products_url') . $product->demo_url }}" id="current-demo">current demo</span></a>
                 </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <input value="{{ $product->author }}" name="author" class="form-control" placeholder="Author" type="text" aria-label="author">
+                </div>
                 <div class="col">
                     <input value="{{ $product->price }}" name="price" class="form-control" placeholder="Price" type="numeric" aria-label="price">
                 </div>
             </div>
         </div>
+        
+        
         <div class="d-grid gap-2 col-6 mx-auto">
             <button class="btn btn-primary" type="submit">Edit product</button>
         </div>

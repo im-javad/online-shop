@@ -12,6 +12,7 @@
                 <th>Id</th>
                 <th>Title</th>
                 <th>Category</th>
+                <th>Author</th>
                 <th>Description</th>
                 <th>Demo</th>
                 <th>Price</th>
@@ -25,6 +26,7 @@
                   <th>{{ $product->id }}</th>
                   <th>{{ $product->title }}</th>
                   <th>{{ $product->category->title }}</th>
+                  <th>{{ $product->author }}</th>
                   <th>{{ substr($product->description , 0 , 15) . '...' }}</th>
                   <th>
                     <a href="{{ config('urls.images_products_url') . $product->demo_url }}" id="a-black"><span class="ti-link"></span></a>

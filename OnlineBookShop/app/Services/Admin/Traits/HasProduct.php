@@ -18,7 +18,8 @@ trait HasProduct{
             'title' => 'required | min:3 | max:255 | unique:products,title',
             'description' => 'required | min:10 | max:500',
             'demo_url' => 'required | image | mimes:png,jpg,jpeg,jfif | max:2048',
-            'price' => 'required | numeric | max:1000000000'
+            'price' => 'required | numeric | max:1000000000',
+            'author' => 'required | string | min:3 | max:45'
         ]);
     }
 
@@ -34,7 +35,8 @@ trait HasProduct{
             'title' => 'required | min:3 | max:255',
             'description' => 'required | min:10 | max:500',
             'demo_url' => 'nullable | image | mimes:png,jpg,jpeg,jfif | max:2048',
-            'price' => 'required | numeric | max:1000000000'
+            'price' => 'required | numeric | max:1000000000',
+            'author' => 'required | string | min:3 | max:45'
         ]);
     }
 
@@ -53,6 +55,7 @@ trait HasProduct{
                 'description' => $validator['description'],
                 'demo_url' => $image_path,
                 'price' => $validator['price'],
+                'author' => $validator['author'],
             ]);
         }catch(\Throwable $th){
             return back()->with('simpleWarningAlert' , 'Failed to storage product.please try again after few minute.');
@@ -72,6 +75,7 @@ trait HasProduct{
             'title' => $validator['title'],
             'description' => $validator['description'],
             'price' => $validator['price'],
+            'author' => $validator['author'],
         ]);
 
         if(isset($validator['demo_url'])){

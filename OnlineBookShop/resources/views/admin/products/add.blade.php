@@ -32,6 +32,13 @@
                 <div class="col">
                     <input name="demo_url" class="form-control" type="file">
                 </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <input name="author" class="form-control" placeholder="Author" type="text" aria-label="author">
+                </div>
                 <div class="col">
                     <input name="price" class="form-control" placeholder="Price" type="numeric" aria-label="price">
                 </div>
