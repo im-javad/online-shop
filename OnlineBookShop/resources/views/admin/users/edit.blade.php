@@ -1,5 +1,7 @@
 @extends('admin.layouts.app')
 
+@section('title' , 'Admin-Edit user')
+
 @section('content')
 
 @include('partials.validation-errors')

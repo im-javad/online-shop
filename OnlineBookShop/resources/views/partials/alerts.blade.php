@@ -11,4 +11,14 @@
         })
     </script>
 @endif
-
+@if(session('simpleWarningAlert'))
+    <script>
+        Swal.fire({
+        position: 'top-end',
+        icon: 'warning',
+        title: "{{ session('simpleWarningAlert')}}",
+        showConfirmButton: false,
+        timer: 4200
+    })
+    </script>
+@endif

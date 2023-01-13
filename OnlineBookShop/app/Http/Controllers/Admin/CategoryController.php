@@ -28,24 +28,10 @@ class CategoryController extends Controller{
      */
     public function storage(Request $request){
         $validator = $this->validateAddForm($request);
-
-        Category::create([
-            'slug' => $validator['slug'],
-            'title' => $validator['title']
-        ]);
+        
+        $this->doStore($validator);
 
         return back()->with('simpleSuccessAlert' , 'New product added successfully');
-    }
-
-    /**
-     * Destroy a category
-     *
-     * @return void
-     */ 
-    public function destroy(Category $category){
-        $category->delete();
-
-        return back()->with('simpleSuccessAlert' , 'Remove category successfully');
     }
 
     /**
@@ -65,14 +51,22 @@ class CategoryController extends Controller{
      * @return void
      */
     public function update(Category $category , Request $request){
-        $validator = $this->validateAddForm($request);
+        $validator = $this->validateUpdateForm($request);
 
-        $category->update([
-            'slug' => $validator['slug'],
-            'title' => $validator['title']
-        ]);
+        $this->doUpdate($category , $validator);
 
-        return redirect()->route('categories.index')->with('simpleSuccessAlert' , 'Update category successfully');
+        return redirect()->route('admin.categories.index')->with('simpleSuccessAlert' , 'Update category successfully');
+    }
+
+    /**
+     * Destroy a category
+     *
+     * @return void
+     */ 
+    public function destroy(Category $category){
+        $category->delete();
+
+        return back()->with('simpleSuccessAlert' , 'Remove category successfully');
     }
 }
 

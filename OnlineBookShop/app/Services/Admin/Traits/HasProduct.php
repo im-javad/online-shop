@@ -15,6 +15,22 @@ trait HasProduct{
     public function validateAddForm(Request $request){
         return $request->validate([
             'category_id' => 'required | max:20 | exists:categories,id',
+            'title' => 'required | min:3 | max:255 | unique:products,title',
+            'description' => 'required | min:10 | max:500',
+            'demo_url' => 'required | image | mimes:png,jpg,jpeg,jfif | max:2048',
+            'price' => 'required | numeric | max:1000000000'
+        ]);
+    }
+
+    /**
+     * Update form validation
+     *
+     * @param Illuminate\Http\Request $request
+     * @return array
+     */ 
+    public function validateUpdateForm(Request $request){
+        return $request->validate([
+            'category_id' => 'required | max:20 | exists:categories,id',
             'title' => 'required | min:3 | max:255',
             'description' => 'required | min:10 | max:500',
             'demo_url' => 'nullable | image | mimes:png,jpg,jpeg,jfif | max:2048',
@@ -29,18 +45,17 @@ trait HasProduct{
      * @return void
      */
     public function doStore(array $validator){
-        $productCreated = Product::create([
-            'category_id' => $validator['category_id'],
-            'title' => $validator['title'],
-            'description' => $validator['description'],
-            'price' => $validator['price'],
-        ]);
-
-        if(isset($validator['demo_url'])){
+        try {
             $image_path = $validator['demo_url']->store('' , 'product_images_storage');
-            $productCreated->update([
+            Product::create([
+                'category_id' => $validator['category_id'],
+                'title' => $validator['title'],
+                'description' => $validator['description'],
                 'demo_url' => $image_path,
+                'price' => $validator['price'],
             ]);
+        }catch(\Throwable $th){
+            return back()->with('simpleWarningAlert' , 'Failed to storage product.please try again after few minute.');
         }
     }
 

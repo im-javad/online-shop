@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title' , 'Edit Product')
+@section('title' , 'Admin-Edit product')
     
 @section('content')
 

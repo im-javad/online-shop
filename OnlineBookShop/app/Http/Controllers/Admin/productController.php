@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Services\Admin\Traits\HasProduct;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class productController extends Controller{
     use HasProduct;
@@ -44,7 +45,7 @@ class productController extends Controller{
 
         $this->doStore($validator);
 
-        return back()->with('simpleSuccessAlert' , 'New product added successfully');
+        return redirect()->route('admin.products.all')->with('simpleSuccessAlert' , 'New product added successfully');
     }
 
     /**
@@ -67,7 +68,7 @@ class productController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function update(Product $product,Request $request){
-        $validator = $this->validateAddForm($request);
+        $validator = $this->validateUpdateForm($request);
 
         $this->doUpdate($product , $validator);
 
@@ -81,6 +82,8 @@ class productController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function destroy(Product $product){
+        File::delete(public_path("\images\products\\$product->demo_url"));
+        
         $product->delete();
 
         return back()->with('simpleSuccessAlert' , 'Product removed successfully');

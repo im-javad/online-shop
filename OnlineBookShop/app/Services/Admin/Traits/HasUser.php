@@ -46,14 +46,18 @@ trait HasUser{
      * @return void
      */
     public function doStore(array $validator){
-        User::create([
-            'name' => $validator['name'],
-            'email' => $validator['email'],
-            'password' => bcrypt($validator['password']),
-            'role' => $validator['role'],
-            'phone_number' => $validator['phone-number'],
-            'address' => $validator['address'],
-        ]);
+        try {
+            User::create([
+                'sname' => $validator['name'],
+                'email' => $validator['email'],
+                'password' => bcrypt($validator['password']),
+                'role' => $validator['role'],
+                'phone_number' => $validator['phone-number'],
+                'address' => $validator['address'],
+            ]);
+        }catch(\Throwable $th){
+            return back()->with('simpleWarningAlert' , 'Failed to storage user.please try again after few minute.');
+        }
     }
 
     /**
