@@ -11,7 +11,7 @@ class Category extends Model{
     protected $fillable = ['slug' , 'title'];
 
     /**
-     * NTO1 relationship beet between category and product
+     * NTO1 relationship between category and product
      *
      * @return array
      */

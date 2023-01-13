@@ -11,7 +11,7 @@ class Product extends Model{
     protected $guarded = [];
 
     /**
-     * 1TON relationship beet between product and category
+     * 1TON relationship between product and category
      *
      * @return array
      */

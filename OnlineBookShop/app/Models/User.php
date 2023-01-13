@@ -38,7 +38,7 @@ class User extends Authenticatable{
     ];
 
     /**
-     * NTO1 relationship beet between user and order
+     * NTO1 relationship between user and order
      *
      * @return array
      */

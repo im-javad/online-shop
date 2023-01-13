@@ -1,5 +1,7 @@
 @extends('admin.layouts.app')
 
+@section('title' , 'Admin-Payments')
+
 @section('content')
     <!-- Payments Table start -->
     <div class="col-12 mt-5">
@@ -13,34 +15,42 @@
                                 <tr>
                                     <th scope="col">Id</th>
                                     <th scope="col">OrderId</th>
+                                    <th scope="col">User</th>
                                     <th scope="col">Amount</th>
                                     <th scope="col">Method</th>
                                     <th scope="col">Gateway</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">RefNum</th>
                                     <th scope="col">Built</th>
-                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th>1</th>
-                                    <td>315</td>
-                                    <td>$ 18900</td>
-                                    <td>Online</td>
-                                    <td>PayPal</td>
-                                    <td><span class="status-p bg-primary">pending</span> <span class="status-p bg-success">complate</span> <span class="status-p bg-danger">fail</span></td>
-                                    <td>88328hsjdhnsj734</td>
-                                    <td>2011/11/11</td>
-                                    <td>
-                                        <ul class="d-flex justify-content-center">
-                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                        </ul>
-                                    </td>
-                                </tr>
+                                @foreach ($payments as $payment)
+                                    <tr>
+                                        <th>{{ $payment->id }}</th>
+                                        <td>{{ $payment->order_id }}</td>
+                                        <td>{{ $payment->order->user->name }}</td>
+                                        <td>${{ $payment->amount }}</td>
+                                        <td>{{ $payment->method }}</td>
+                                        <td>{{ $payment->gateway }}</td>
+                                        <td>
+                                            @if($payment->status === 'paid')
+                                                <i class="fa fa-smile-o"></i>
+                                            @else
+                                                <i class="fa fa-frown-o"></i>
+                                            @endif
+                                        </td>                                        
+                                        <td>{{ $payment->ref_num }}</td>
+                                        <td>{{ $payment->created_at }}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                              {{ $payments->links() }}
+                            </ul>
+                        </nav>  
                     </div>
                 </div>
             </div>

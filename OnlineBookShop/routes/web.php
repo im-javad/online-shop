@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\productController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -42,7 +43,7 @@ Route::prefix('admin')->group(function(){
     });
     /* For payments */
     Route::prefix('payments')->group(function(){
-        
+        Route::get('' , [PaymentController::class , 'index'])->name('admin.payments.index');
     });
 });
 

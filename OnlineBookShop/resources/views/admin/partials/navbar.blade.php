@@ -6,7 +6,6 @@
                 <div class="menu-inner">
                     <nav>
                         <ul class="metismenu" id="menu">
-                            <li><a href="dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-users"></i><span>User Management</span></a>
                                 <ul class="collapse">
@@ -23,7 +22,7 @@
                             </li>
                             <li><a href="{{ route('admin.categories.index') }}"><i class="fa fa-object-group"></i> <span>Categories</span></a></li>
                             <li><a href="{{ route('admin.orders.index') }}"><i class="fa fa-list-ol"></i> <span>Orders</span></a></li>
-                            <li><a href="payments"><i class="fa fa-dollar"></i> <span>Payments</span></a></li>
+                            <li><a href="{{ route('admin.payments.index') }}"><i class="fa fa-dollar"></i> <span>Payments</span></a></li>
                         </ul>
                     </nav>
                 </div>
