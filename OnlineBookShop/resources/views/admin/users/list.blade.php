@@ -41,6 +41,11 @@
             </tbody>
           </table>
         <!-- Users list end -->
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            {{ $users->links() }}
+          </ul>
+        </nav>  
     </div>
 </div>
 @endsection

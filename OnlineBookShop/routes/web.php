@@ -1,6 +1,7 @@
 <?PhP
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\productController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -34,6 +35,14 @@ Route::prefix('admin')->group(function(){
         Route::delete('/{user}/remove' , [UserController::class , 'destroy'])->name('admin.users.destroy');
         Route::get('/{user}/edit' , [UserController::class , 'edit'])->name('admin.users.edit');
         Route::put('/{user}/update' , [UserController::class , 'update'])->name('admin.users.update');
+    });
+    /* For orders */
+    Route::prefix('orders')->group(function(){
+        Route::get('' , [OrderController::class , 'index'])->name('admin.orders.index');
+    });
+    /* For payments */
+    Route::prefix('payments')->group(function(){
+        
     });
 });
 

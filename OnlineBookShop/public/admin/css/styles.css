@@ -556,6 +556,10 @@ button#button-delete{
     background: white; border: 0px;
 }
 
+button#open-modal-cart{
+    padding: 3px 15px;
+}
+
 a#a-black {
     color: black;
 }
@@ -568,6 +572,16 @@ a#current-demo{
     color: rgb(26, 158, 0); 
     font-size: 18px; 
     font-weight: 750;
+}
+
+i.fa.fa-frown-o {
+    font-size: 22px;
+    color: red;
+}
+
+i.fa.fa-smile-o {
+    font-size: 22px;
+    color: rgb(7, 202, 0);
 }
 /*-------------------- END Extra ------------------- */
 

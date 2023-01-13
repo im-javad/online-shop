@@ -22,7 +22,7 @@
                                 </ul>
                             </li>
                             <li><a href="{{ route('admin.categories.index') }}"><i class="fa fa-object-group"></i> <span>Categories</span></a></li>
-                            <li><a href="orders"><i class="fa fa-list-ol"></i> <span>Orders</span></a></li>
+                            <li><a href="{{ route('admin.orders.index') }}"><i class="fa fa-list-ol"></i> <span>Orders</span></a></li>
                             <li><a href="payments"><i class="fa fa-dollar"></i> <span>Payments</span></a></li>
                         </ul>
                     </nav>
@@ -59,3 +59,4 @@
                 </div>
             </div>
             <!-- header area end -->
+
