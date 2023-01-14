@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\productController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Shop\MainController;
+use App\Http\Controllers\Shop\ProductController as ShopProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('')->group(function(){
     /* For main ones */
     Route::get('' , [MainController::class , 'home'])->name('shop.home');
+    /* For products */
+    Route::prefix('/products')->group(function(){
+        Route::get('' , [ShopProductController::class , 'index'])->name('shop.products.index');
+        Route::get('/{product}/show' , [ShopProductController::class , 'show'])->name('shop.products.show');
+    });
 });
 
 /** Routes that has admin prefix **/

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Shop;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Product;
 
 class MainController extends Controller{
     /**
@@ -12,7 +12,9 @@ class MainController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function home(){
-        return view('index');
+        $someItems = Product::take(12)->get();
+
+        return view('index' , compact('someItems'));
     }
 }
 

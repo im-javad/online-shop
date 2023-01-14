@@ -16,7 +16,7 @@ trait HasProduct{
         return $request->validate([
             'category_id' => 'required | max:20 | exists:categories,id',
             'title' => 'required | min:3 | max:255 | unique:products,title',
-            'description' => 'required | min:10 | max:500',
+            'description' => 'required | min:10 | max:1500',
             'demo_url' => 'required | image | mimes:png,jpg,jpeg,jfif | max:2048',
             'price' => 'required | numeric | max:1000000000',
             'author' => 'required | string | min:3 | max:45'
@@ -33,7 +33,7 @@ trait HasProduct{
         return $request->validate([
             'category_id' => 'required | max:20 | exists:categories,id',
             'title' => 'required | min:3 | max:255',
-            'description' => 'required | min:10 | max:500',
+            'description' => 'required | min:10 | max:1500',
             'demo_url' => 'nullable | image | mimes:png,jpg,jpeg,jfif | max:2048',
             'price' => 'required | numeric | max:1000000000',
             'author' => 'required | string | min:3 | max:45'

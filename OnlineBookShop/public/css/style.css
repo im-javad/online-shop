@@ -939,7 +939,7 @@ This is main CSS file that contains custom style rules used in this template
   padding-bottom: 4em;
 }
 .padding-large {
-  padding-top: 7em;
+  padding-top: 1.8em;
   padding-bottom: 7em;
 }
 .padding-xlarge {
@@ -1643,7 +1643,7 @@ img.post-image {
 /*----- Featured Books Section
 --------------------------------------------------------------*/
 #special-offer,
-#popular-books,
+#popular-categories,
 #featured-books {
     margin-bottom: 180px;
 }
@@ -2085,5 +2085,21 @@ footer#footer {
 a#user-status{
   color: #ff7100;
   font-weight: 750;
+}
+
+#custom-gray{
+  color: #7b7b79
+}
+
+#custom-orange{
+  color: #ff5100
+}
+
+#middle{
+  text-align: center;
+}
+
+#product-show-zoom{
+  zoom: 130%;
 }
 /*-------------------- End Extra ------------------- */
