@@ -1,8 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+
 <!-- Shop page start -->
 <section class="padding-large">
+	<div class="container h-100" id="h-100-p">
+		<div class="searchbar">
+			<form action="{{ route('shop.products.index') }}" method="GET">
+				<input name="search" class="search_input" id="prepare-search" value="{{ app('request')->input('search') }}" type="text" placeholder="Search...">
+				<button hidden type="submit"></button>
+			</form>
+		</div>
+	</div>
 	<ul class="tabs">
 		<li data-tab-target="#all" class="active tab">All</li>
 		<li data-tab-target="#historical" class="tab">Historical</li>

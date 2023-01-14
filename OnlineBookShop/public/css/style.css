@@ -2102,4 +2102,35 @@ a#user-status{
 #product-show-zoom{
   zoom: 130%;
 }
+
+.container h-100{
+	width: 27%;
+}
+
+.search_input{
+	width: 100%;
+  caret-color: #ffffff;
+  transition: width 0.4s linear;
+}
+
+.searchbar{
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 40px;
+  background-color: #3d3a3a;
+  border-radius: 17px;
+  padding: 5px;
+}
+
+#prepare-search{
+  color: white;
+  height: 0; 
+  padding: 9px 2px;
+  border: 0px solid #3d3a3a; 
+  background-color: #3d3a3a;
+}
+
+#h-100-p{
+  width: 27%
+}
 /*-------------------- End Extra ------------------- */
