@@ -2005,7 +2005,7 @@ footer#footer {
     margin: 0 15px 25px;
 }
 .product-style figcaption p {
-    margin-bottom: 20px;
+    margin-bottom: 13px;
 }
 .products-grid .product-style {
     width: 25%;
@@ -2045,8 +2045,8 @@ footer#footer {
     opacity: 1;
 }
 .product-style figcaption {  
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     text-align: center;
 }
 .product-style figcaption>h3 {
@@ -2132,5 +2132,24 @@ a#user-status{
 
 #h-100-p{
   width: 27%
+}
+#increase{
+  text-decoration: none;
+    font-size: 20px;
+    background: #daa556;
+    border-radius: 7px;
+    padding: 0px 7px 1px;
+}
+#quantity{
+  font-size: 25px;
+  padding: 0px;
+  margin: 13px;
+}
+#decrease{
+  text-decoration: none;
+  font-size: 20px;
+  background: #daa556;
+  padding: 0px 9px 1px;
+  border-radius: 7px;
 }
 /*-------------------- End Extra ------------------- */

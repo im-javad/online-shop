@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@inject('basketAtViews', 'App\Support\Basket\BasketAtViews')
+
 @section('content')
 
 <!-- Shop page start -->
@@ -27,11 +29,18 @@
 					@foreach ($products as $product)
 						<figure class="product-style">
 							<img src="images/products/{{ $product->demo_url }}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
+							<a href="{{ route('shop.basket.add' , $product->id) }}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button></a>
 							<figcaption>
 								<h3><a href="{{ route('shop.products.show' , $product->id ) }}">{{ $product->title }}</a></h3>
 								<p>{{ $product->author }}</p>
 								<div class="item-price">${{ $product->price }}</div>
+								@if($basketAtViews->hasQuantity($product->id))
+									<div>
+										<a href="{{ route('shop.basket.add' , $product->id)}}" id="increase">+</a>
+										<span id="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
+										<a href="#" id="decrease">-</a>
+									</div>	
+								@endif 
 							</figcaption>
 						</figure>
 					@endforeach
@@ -50,6 +59,13 @@
 								<h3><a href="{{ route('shop.products.show' , $product->id ) }}">{{ $product->title }}</a></h3>
 								<p>{{ $product->author }}</p>
 								<div class="item-price">${{ $product->price }}</div>
+								@if($basketAtViews->hasQuantity($product->id))
+									<div>
+										<a href="{{ route('shop.basket.add' , $product->id)}}" id="increase">+</a>
+										<span id="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
+										<a href="#" id="decrease">-</a>
+									</div>	
+								@endif 
 							</figcaption>
 						</figure>
 					@endforeach
@@ -68,6 +84,13 @@
 								<h3><a href="{{ route('shop.products.show' , $product->id ) }}">{{ $product->title }}</a></h3>
 								<p>{{ $product->author }}</p>
 								<div class="item-price">${{ $product->price }}</div>
+								@if($basketAtViews->hasQuantity($product->id))
+									<div>
+										<a href="{{ route('shop.basket.add' , $product->id)}}" id="increase">+</a>
+										<span id="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
+										<a href="#" id="decrease">-</a>
+									</div>	
+								@endif 
 							</figcaption>
 						</figure>
 					@endforeach
@@ -86,6 +109,13 @@
 								<h3><a href="{{ route('shop.products.show' , $product->id ) }}">{{ $product->title }}</a></h3>
 								<p>{{ $product->author }}</p>
 								<div class="item-price">${{ $product->price }}</div>
+								@if($basketAtViews->hasQuantity($product->id))
+									<div>
+										<a href="{{ route('shop.basket.add' , $product->id)}}" id="increase">+</a>
+										<span id="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
+										<a href="#" id="decrease">-</a>
+									</div>	
+								@endif 	
 							</figcaption>
 						</figure>
 					@endforeach
@@ -104,6 +134,13 @@
 								<h3><a href="{{ route('shop.products.show' , $product->id ) }}">{{ $product->title }}</a></h3>
 								<p>{{ $product->author }}</p>
 								<div class="item-price">${{ $product->price }}</div>
+								@if($basketAtViews->hasQuantity($product->id))
+									<div>
+										<a href="{{ route('shop.basket.add' , $product->id)}}" id="increase">+</a>
+										<span id="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
+										<a href="#" id="decrease">-</a>
+									</div>	
+								@endif 	
 							</figcaption>
 						</figure>
 					@endforeach
@@ -122,6 +159,13 @@
 								<h3><a href="{{ route('shop.products.show' , $product->id ) }}">{{ $product->title }}</a></h3>
 								<p>{{ $product->author }}</p>
 								<div class="item-price">${{ $product->price }}</div>
+								@if($basketAtViews->hasQuantity($product->id))
+									<div>
+										<a href="{{ route('shop.basket.add' , $product->id)}}" id="increase">+</a>
+										<span id="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
+										<a href="#" id="decrease">-</a>
+									</div>	
+								@endif 	
 							</figcaption>
 						</figure>
 					@endforeach

@@ -2,6 +2,8 @@
 
 @section('title' , 'Farvahar Book')
 
+@inject('basketAtViews', 'App\Support\Basket\BasketAtViews')
+
 @section('content')
 <!-- Billboard start -->
 <section id="billboard">
@@ -67,6 +69,13 @@
 								<h3><a href="{{ route('shop.products.show' , $item->id ) }}">{{ $item->title }}</a></h3>
 								<p>{{ $item->author }}</p>
 								<div class="item-price">${{ $item->price }}</div>
+								@if($basketAtViews->hasQuantity($item->id))
+									<div>
+										<a href="{{ route('shop.basket.add' , $item->id)}}" id="increase">+</a>
+										<span id="quantity">{{ $basketAtViews->getQuantity($item->id) }}</span>
+										<a href="#" id="decrease">-</a>
+									</div>	
+								@endif 	
 							</figcaption>
 						</figure>
 					</div>
@@ -84,6 +93,13 @@
 								<h3><a href="{{ route('shop.products.show' , $item->id ) }}">{{ $item->title }}</a></h3>
 								<p>{{ $item->author }}</p>
 								<div class="item-price">${{ $item->price }}</div>
+								@if($basketAtViews->hasQuantity($item->id))
+									<div>
+										<a href="{{ route('shop.basket.add' , $item->id)}}" id="increase">+</a>
+										<span id="quantity">{{ $basketAtViews->getQuantity($item->id) }}</span>
+										<a href="#" id="decrease">-</a>
+									</div>	
+								@endif 	
 							</figcaption>
 						</figure>
 					</div>
@@ -101,6 +117,13 @@
 								<h3><a href="{{ route('shop.products.show' , $item->id ) }}">{{ $item->title }}</a></h3>
 								<p>{{ $item->author }}</p>
 								<div class="item-price">${{ $item->price }}</div>
+								@if($basketAtViews->hasQuantity($item->id))
+									<div>
+										<a href="{{ route('shop.basket.add' , $item->id)}}" id="increase">+</a>
+										<span id="quantity">{{ $basketAtViews->getQuantity($item->id) }}</span>
+										<a href="#" id="decrease">-</a>
+									</div>	
+								@endif 	
 							</figcaption>
 						</figure>
 					</div>

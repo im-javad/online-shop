@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\productController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Shop\BasketController;
 use App\Http\Controllers\Shop\MainController;
 use App\Http\Controllers\Shop\ProductController as ShopProductController;
 use Illuminate\Support\Facades\Auth;
@@ -18,6 +19,10 @@ Route::prefix('')->group(function(){
     Route::prefix('/products')->group(function(){
         Route::get('' , [ShopProductController::class , 'index'])->name('shop.products.index');
         Route::get('/{product}/show' , [ShopProductController::class , 'show'])->name('shop.products.show');
+    });
+    /* For basket */
+    Route::prefix('/basket')->group(function(){
+        Route::get('/{product}/add' , [BasketController::class , 'add'])->name('shop.basket.add');
     });
 });
 
