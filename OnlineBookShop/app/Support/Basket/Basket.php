@@ -21,6 +21,10 @@ class Basket{
         $this->storage->set($product->id , ['quantity' => $currentQuantity + $quantity]);
     }
 
+    public function remove(Product $product){
+        
+    }
+
     /*** Auxiliary methods ***/
 
     /**
