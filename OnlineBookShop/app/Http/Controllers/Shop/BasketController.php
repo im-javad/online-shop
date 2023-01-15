@@ -42,5 +42,16 @@ class BasketController extends Controller{
 
         return back();
     }
+
+    /**
+     * Clear the basket
+     *
+     * @return void
+     */
+    public function clear(){
+        $this->basket->clear();
+
+        return redirect()->route('shop.products.index')->with('simpleSuccessAlert' , 'Basket cleared successfully');
+    }
 }
 

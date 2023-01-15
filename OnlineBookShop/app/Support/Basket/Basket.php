@@ -35,6 +35,15 @@ class Basket{
         $this->update($product->id , $currentQuantity - $quantity);
     }
 
+    /**
+     * Clear all of the sessions 
+     *
+     * @return void
+     */ 
+    public function clear(){
+        $this->storage->clear();
+    }
+
     /*** Auxiliary methods ***/
 
     /**
