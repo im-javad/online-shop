@@ -3,7 +3,6 @@ namespace App\Support\Basket;
 
 use App\Models\Product;
 use App\Support\Basket\Traits\Preparation;
-use App\Support\Storage\Contract\StorageInterface;
 
 class Basket{
     use Preparation;
@@ -11,7 +10,7 @@ class Basket{
     /**
      * Adding quantity to sessions 
      *
-     * @param Product $product
+     * @param \App\Models\Product $product
      * @param integer $quantity
      * @return void
      */
@@ -20,11 +19,20 @@ class Basket{
 
         $product->hasStock($currentQuantity);
 
-        $this->storage->set($product->id , ['quantity' => $currentQuantity + $quantity]);
+        $this->update($product->id , $currentQuantity + $quantity);
     }
 
-    public function remove(Product $product){
-        
+    /**
+     * Removing quantity from sessions
+     *
+     * @param \App\Models\Product $product
+     * @param integer $quantity
+     * @return void
+     */
+    public function remove(Product $product , int $quantity){
+        $currentQuantity = $this->currentQuantity($product->id);
+
+        $this->update($product->id , $currentQuantity - $quantity);
     }
 
     /*** Auxiliary methods ***/
@@ -50,6 +58,20 @@ class Basket{
             return $this->storage->getQuantity($productId);
         return false;
     }
+
+    /**
+     * Update quantity
+     *
+     * @param integer $productId
+     * @param integer $quantity
+     * @return void
+     */
+    public function update(int $productId , int $quantity){
+        if($quantity <= 0)
+            return $this->storage->unset($productId);
+        $this->storage->set($productId , ['quantity' => $quantity]);
+    }
 }
+
 
 

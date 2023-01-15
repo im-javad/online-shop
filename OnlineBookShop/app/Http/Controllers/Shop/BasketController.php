@@ -17,7 +17,7 @@ class BasketController extends Controller{
     /**
      * Add a product to basket
      *
-     * @param Product $product
+     * @param \App\Models\Product $product
      * @param integer $quantity
      * @return void
      */
@@ -30,8 +30,17 @@ class BasketController extends Controller{
         }
     }
 
-    public function remove(Product $product){
-        $this->basket->remove($product);
+    /**
+     * Remove a product from basket
+     *
+     * @param \App\Models\Product $product
+     * @param integer $quantity
+     * @return void
+     */
+    public function remove(Product $product , int $quantity = 1){
+        $this->basket->remove($product , $quantity);
+
+        return back();
     }
 }
 

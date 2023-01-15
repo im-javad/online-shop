@@ -38,7 +38,7 @@
 									<div>
 										<a href="{{ route('shop.basket.add' , $product->id)}}" id="increase">+</a>
 										<span id="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
-										<a href="#" id="decrease">-</a>
+										<a href="{{ route('shop.basket.remove' , $product->id) }}" id="decrease">-</a>
 									</div>	
 								@endif 
 							</figcaption>
@@ -63,7 +63,7 @@
 									<div>
 										<a href="{{ route('shop.basket.add' , $product->id)}}" id="increase">+</a>
 										<span id="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
-										<a href="#" id="decrease">-</a>
+										<a href="{{ route('shop.basket.remove' , $product->id) }}" id="decrease">-</a>
 									</div>	
 								@endif 
 							</figcaption>
@@ -88,7 +88,7 @@
 									<div>
 										<a href="{{ route('shop.basket.add' , $product->id)}}" id="increase">+</a>
 										<span id="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
-										<a href="#" id="decrease">-</a>
+										<a href="{{ route('shop.basket.remove' , $product->id) }}" id="decrease">-</a>
 									</div>	
 								@endif 
 							</figcaption>
@@ -113,7 +113,7 @@
 									<div>
 										<a href="{{ route('shop.basket.add' , $product->id)}}" id="increase">+</a>
 										<span id="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
-										<a href="#" id="decrease">-</a>
+										<a href="{{ route('shop.basket.remove' , $product->id) }}" id="decrease">-</a>
 									</div>	
 								@endif 	
 							</figcaption>
@@ -138,7 +138,7 @@
 									<div>
 										<a href="{{ route('shop.basket.add' , $product->id)}}" id="increase">+</a>
 										<span id="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
-										<a href="#" id="decrease">-</a>
+										<a href="{{ route('shop.basket.remove' , $product->id) }}" id="decrease">-</a>
 									</div>	
 								@endif 	
 							</figcaption>
@@ -163,7 +163,7 @@
 									<div>
 										<a href="{{ route('shop.basket.add' , $product->id)}}" id="increase">+</a>
 										<span id="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
-										<a href="#" id="decrease">-</a>
+										<a href="{{ route('shop.basket.remove' , $product->id) }}" id="decrease">-</a>
 									</div>	
 								@endif 	
 							</figcaption>

@@ -65,7 +65,7 @@
 				  	<div class="col-md-3">
 					  	<figure class="product-style">
 							<img src="images/products/{{ $item->demo_url }}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
+							<a href="{{ route('shop.basket.add' , $item->id) }}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button></a>
 							<figcaption>
 								<h3><a href="{{ route('shop.products.show' , $item->id ) }}">{{ $item->title }}</a></h3>
 								<p>{{ $item->author }}</p>
@@ -74,7 +74,7 @@
 									<div>
 										<a href="{{ route('shop.basket.add' , $item->id)}}" id="increase">+</a>
 										<span id="quantity">{{ $basketAtViews->getQuantity($item->id) }}</span>
-										<a href="#" id="decrease">-</a>
+										<a href="{{ route('shop.basket.remove' , $item->id )}}" id="decrease">-</a>
 									</div>	
 								@endif 	
 							</figcaption>
@@ -89,7 +89,7 @@
 				  	<div class="col-md-3">
 					  	<figure class="product-style">
 							<img src="images/products/{{ $item->demo_url }}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
+							<a href="{{ route('shop.basket.add' , $item->id) }}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button></a>
 							<figcaption>
 								<h3><a href="{{ route('shop.products.show' , $item->id ) }}">{{ $item->title }}</a></h3>
 								<p>{{ $item->author }}</p>
@@ -98,7 +98,7 @@
 									<div>
 										<a href="{{ route('shop.basket.add' , $item->id)}}" id="increase">+</a>
 										<span id="quantity">{{ $basketAtViews->getQuantity($item->id) }}</span>
-										<a href="#" id="decrease">-</a>
+										<a href="{{ route('shop.basket.remove' , $item->id )}}" id="decrease">-</a>
 									</div>	
 								@endif 	
 							</figcaption>
@@ -113,7 +113,7 @@
 				  	<div class="col-md-3">
 					  	<figure class="product-style">
 							<img src="images/products/{{ $item->demo_url }}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
+							<a href="{{ route('shop.basket.add' , $item->id) }}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button></a>
 							<figcaption>
 								<h3><a href="{{ route('shop.products.show' , $item->id ) }}">{{ $item->title }}</a></h3>
 								<p>{{ $item->author }}</p>
@@ -122,7 +122,7 @@
 									<div>
 										<a href="{{ route('shop.basket.add' , $item->id)}}" id="increase">+</a>
 										<span id="quantity">{{ $basketAtViews->getQuantity($item->id) }}</span>
-										<a href="#" id="decrease">-</a>
+										<a href="{{ route('shop.basket.remove' , $item->id )}}" id="decrease">-</a>
 									</div>	
 								@endif 	
 							</figcaption>

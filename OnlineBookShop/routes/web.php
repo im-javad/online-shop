@@ -22,6 +22,7 @@ Route::prefix('')->group(function(){
     });
     /* For basket */
     Route::prefix('/basket')->group(function(){
+        // checked restfull(methods!!!!)
         Route::get('/{product}/add' , [BasketController::class , 'add'])->name('shop.basket.add');
         Route::get('/{product}/remove' , [BasketController::class , 'remove'])->name('shop.basket.remove');
     });
