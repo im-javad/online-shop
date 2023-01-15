@@ -2174,4 +2174,21 @@ p#empty-basket{
   text-align: left;
   color: #000000;
 }
+
+button#edit-quantity{
+  padding: 9px 28px;
+  border-radius: 40px;
+  background: black;
+  color: #00d4ff;
+  height: 0%;
+}
+
+#w-100{
+  width: 100%;
+}
+
+#continue-sh{
+  text-decoration: none;
+  text-align: center;
+}
 /*-------------------- End Extra ------------------- */

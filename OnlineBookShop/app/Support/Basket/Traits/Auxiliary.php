@@ -6,6 +6,8 @@ use App\Models\Product;
 trait Auxiliary{
     /**
      * Getting the details of the products added to the shopping cart
+     * 
+     * @return mixed
      */
     public function giveSelectedProducts(){
         $productsId = array_keys($this->storage->all());

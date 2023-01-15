@@ -31,7 +31,7 @@
 
 .shopping__cart__table table tbody tr td {
 	padding-bottom: 30px;
-	padding-top: 30px;
+	padding-top: 18px;
 }
 
 .shopping__cart__table table tbody tr td.product__cart__item {
@@ -101,21 +101,22 @@
 	text-align: center;
 }
 
-.continue__btn.update__btn {
+.continue__btn.clear__btn {
 	text-align: right;
 }
 
-.continue__btn.update__btn a {
+.continue__btn.clear__btn a {
 	color: #ffffff;
-	background: #111111;
+	background: #ee0404;
 	border-color: #111111;
 }
 
-.continue__btn.update__btn a i {
+.continue__btn.clear__btn a i {
 	margin-right: 5px;
 }
 
 .continue__btn a {
+    text-decoration: initial;
 	color: #111111;
 	font-size: 14px;
 	font-weight: 700;

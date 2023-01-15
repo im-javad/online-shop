@@ -1,6 +1,7 @@
 <?PhP 
 namespace App\Support\Basket;
 
+use App\Models\Product;
 use App\Support\Basket\Traits\Auxiliary;
 use App\Support\Basket\Traits\Preparation;
 
@@ -38,6 +39,16 @@ class BasketAtViews{
             $countBasket += $item['quantity'];
         }
         return $countBasket;
+    }
+
+    /**
+     * Give product total price
+     *
+     * @param \App\Models\Product $product
+     * @return int|float
+     */
+    public function productTotal(Product $product){
+        return $product->price * $product->quantity;
     }
 }
 

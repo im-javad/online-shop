@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Shop;
 
 use App\Exceptions\QuantityExceededException;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Shop\UpdateQuantityRequest;
 use App\Models\Product;
 use App\Support\Basket\Basket;
 
@@ -17,7 +18,7 @@ class BasketController extends Controller{
     /**
      * Show the basket(cart) page 
      *
-     * @return void
+     * @return \Illuminate\Contracts\View\View
      */
     public function index(){
         $selectedProducts = $this->basket->selectedProducts();
@@ -30,7 +31,7 @@ class BasketController extends Controller{
      *
      * @param \App\Models\Product $product
      * @param integer $quantity
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function add(Product $product , int $quantity = 1){
         try{
@@ -46,7 +47,7 @@ class BasketController extends Controller{
      *
      * @param \App\Models\Product $product
      * @param integer $quantity
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function remove(Product $product , int $quantity = 1){
         $this->basket->remove($product , $quantity);
@@ -55,14 +56,31 @@ class BasketController extends Controller{
     }
 
     /**
+     * Update product quantity in basket
+     *
+     * @param \App\Models\Product $product
+     * @param \App\Http\Requests\Shop\UpdateQuantityRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function updateQuantity(Product $product , UpdateQuantityRequest $request){
+        try{
+            $validator = $request->validated();
+            $this->basket->updateQuantity($product , $validator['new-quantity']);
+            return back()->with('simpleSuccessAlert' , 'Quantity updated successfully');
+        }catch(QuantityExceededException $event) {
+            return back()->with('simpleWarningAlert' , $event->getMessage());
+        }
+    }
+
+    /**
      * Clear the basket
      *
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function clear(){
         $this->basket->clear();
 
-        return redirect()->route('shop.products.index')->with('simpleSuccessAlert' , 'Basket cleared successfully');
+        return redirect()->route('shop.basket.index')->with('simpleSuccessAlert' , 'Basket cleared successfully');
     }
 }
 

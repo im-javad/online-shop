@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Shop\BasketController;
 use App\Http\Controllers\Shop\MainController;
 use App\Http\Controllers\Shop\ProductController as ShopProductController;
+use App\Support\Basket\Basket;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,7 @@ Route::prefix('')->group(function(){
         Route::get('/{product}/add' , [BasketController::class , 'add'])->name('shop.basket.add');
         Route::get('/{product}/remove' , [BasketController::class , 'remove'])->name('shop.basket.remove');
         Route::get('/clear' , [BasketController::class , 'clear'])->name('shop.basket.clear');
+        Route::put('/update/{product}/quantity' , [BasketController::class , 'updateQuantity'])->name('shop.basket.update.quantity');
     });
 });
 

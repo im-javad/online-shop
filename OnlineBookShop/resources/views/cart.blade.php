@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@inject('basketAtViews', 'App\Support\Basket\BasketAtViews')
+
 @section('content')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 <link rel="stylesheet" href="/css/cart.css">
@@ -20,7 +22,7 @@
                                     <th>Product</th>
                                     <th>Quantity</th>
                                     <th>Total</th>
-                                    <th></th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -32,34 +34,32 @@
                                                 <h5>${{ $product->price }}</h5>
                                             </div>
                                         </td>
+                                        <form action="{{ route('shop.basket.update.quantity' , $product->id) }}" method="POST">
+                                        @method('put')
+                                        @csrf
                                         <td class="quantity__item">
                                             <div class="quantity">
                                                 <div class="pro-qty-2">
-                                                    <select name="" id="">
+                                                    <select name="new-quantity">
                                                         @for($i = 0; $i <= $product->stock; $i++)
                                                             <option {{ ($product->quantity === $i) ? 'selected' : '' }} value="{{ $i }}">{{ $i }}</option>
                                                         @endfor
                                                     </select>
-                                                    {{-- <input type="text" value="{{ $product->quantity }}"> --}}
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="cart__price">${{ $product->price * $product->quantity }}</td>
-                                        <td class="cart__close"><i class="fa fa-close"></i></td>
+                                        <td class="cart__price">${{ $basketAtViews->productTotal($product) }}</td>
+                                        <td><button type="submit" id="edit-quantity">Edit</button></td>
+                                        </form>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
                     </div>
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="continue__btn">
-                                <a style="text-decoration: initial;" href="{{ route('shop.products.index') }}">Continue Shopping</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="continue__btn update__btn">
-                                <a href="#" style="text-decoration: initial;"><i class="fa fa-spinner"></i>Do Update cart</a>
+                        <div class="col-lg-6 col-md-6 col-sm-6" id="w-100">
+                            <div class="continue__btn clear__btn" id="continue-sh">
+                                <a href="{{ route('shop.basket.clear') }}"></i>Clearing the cart</a>
                             </div>
                         </div>
                     </div>
@@ -74,4 +74,3 @@
 <!-- Shopping Cart End -->
 @endsection
 
-	
