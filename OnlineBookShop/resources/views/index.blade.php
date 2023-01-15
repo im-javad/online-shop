@@ -5,6 +5,7 @@
 @inject('basketAtViews', 'App\Support\Basket\BasketAtViews')
 
 @section('content')
+
 <!-- Billboard start -->
 <section id="billboard">
 	<div class="container">

@@ -36,7 +36,6 @@
                 </div>
             </div>
         </div>
-
         <div class="card-body">
             <div class="row">
                 <div class="col">
@@ -45,10 +44,11 @@
                 <div class="col">
                     <input value="{{ $product->price }}" name="price" class="form-control" placeholder="Price" type="numeric" aria-label="price">
                 </div>
+                <div class="col">
+                    <input value="{{ $product->stock }}" name="stock" class="form-control" placeholder="Stock" type="numeric" aria-label="stock">
+                </div>
             </div>
         </div>
-        
-        
         <div class="d-grid gap-2 col-6 mx-auto">
             <button class="btn btn-primary" type="submit">Edit product</button>
         </div>

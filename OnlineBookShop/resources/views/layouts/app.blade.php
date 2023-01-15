@@ -16,6 +16,9 @@
 <!-- Navbar part -->
 @include('partials.navbar')
 
+<!-- Alerts part -->
+@include('partials.alerts')
+
 <!-- content part -->
 @yield('content')
 

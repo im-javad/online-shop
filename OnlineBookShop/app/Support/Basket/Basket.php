@@ -18,6 +18,8 @@ class Basket{
     public function add(Product $product , int $quantity){
         $currentQuantity = $this->currentQuantity($product->id);
 
+        $product->hasStock($currentQuantity);
+
         $this->storage->set($product->id , ['quantity' => $currentQuantity + $quantity]);
     }
 
@@ -42,7 +44,7 @@ class Basket{
     public function currentQuantity(int $productId){
         if($this->hasProduct($productId))
             return $this->storage->getQuantity($productId);
-        return null;
+        return false;
     }
 }
 

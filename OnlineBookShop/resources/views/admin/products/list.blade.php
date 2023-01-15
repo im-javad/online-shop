@@ -16,6 +16,7 @@
                 <th>Description</th>
                 <th>Demo</th>
                 <th>Price</th>
+                <th>Stock</th>
                 <th>Built</th>
                 <th>Action</th>
               </tr>
@@ -34,6 +35,7 @@
                     <a href="{{ route('admin.products.download.demo' , $product->id)}}" id="a-black"><span class="ti-download"></span></a>
                   </th>
                   <th>${{ $product->price }}</th>
+                  <th>{{ $product->stock }}</th>
                   <th>{{ $product->created_at }}</th>
                   <th>
                     <form action="{{ route('admin.products.destroy' , $product->id) }}" method="POST" id="prepare-form">
