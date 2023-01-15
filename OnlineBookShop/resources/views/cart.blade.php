@@ -8,6 +8,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
+                    @if($selectedProducts->isEmpty())
+                        <p id="empty-basket">
+                            @lang('basket.empty basket' , ['link' => route('shop.products.index')])
+                        </p>
+                    @else
                     <div class="shopping__cart__table">
                         <table>
                             <thead>
@@ -19,30 +24,37 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="product__cart__item">
-                                        <div class="product__cart__item__text">
-                                            <h6>T-shirt Contrast Pocket</h6>
-                                            <h5>$98.49</h5>
-                                        </div>
-                                    </td>
-                                    <td class="quantity__item">
-                                        <div class="quantity">
-                                            <div class="pro-qty-2">
-                                                <input type="text" value="1">
+                                @foreach ($selectedProducts as $product)
+                                    <tr>
+                                        <td class="product__cart__item">
+                                            <div class="product__cart__item__text">
+                                                <h6>{{ $product->title }}</h6>
+                                                <h5>${{ $product->price }}</h5>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td class="cart__price">$ 30.00</td>
-                                    <td class="cart__close"><i class="fa fa-close"></i></td>
-                                </tr>
+                                        </td>
+                                        <td class="quantity__item">
+                                            <div class="quantity">
+                                                <div class="pro-qty-2">
+                                                    <select name="" id="">
+                                                        @for($i = 0; $i <= $product->stock; $i++)
+                                                            <option {{ ($product->quantity === $i) ? 'selected' : '' }} value="{{ $i }}">{{ $i }}</option>
+                                                        @endfor
+                                                    </select>
+                                                    {{-- <input type="text" value="{{ $product->quantity }}"> --}}
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cart__price">${{ $product->price * $product->quantity }}</td>
+                                        <td class="cart__close"><i class="fa fa-close"></i></td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="continue__btn">
-                                <a style="text-decoration: initial;" href="#">Continue Shopping</a>
+                                <a style="text-decoration: initial;" href="{{ route('shop.products.index') }}">Continue Shopping</a>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -56,6 +68,7 @@
                 </div>
 				@include('summary')
             </div>
+            @endif
         </div>
     </section>
 <!-- Shopping Cart End -->

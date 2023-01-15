@@ -15,6 +15,17 @@ class BasketController extends Controller{
     }
 
     /**
+     * Show the basket(cart) page 
+     *
+     * @return void
+     */
+    public function index(){
+        $selectedProducts = $this->basket->selectedProducts();
+        
+        return view('cart' , compact('selectedProducts'));
+    }
+
+    /**
      * Add a product to basket
      *
      * @param \App\Models\Product $product

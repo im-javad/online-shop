@@ -16,8 +16,8 @@ class SessionStorage implements StorageInterface , Countable{
      *
      * @return array
      */
-    public function all() :array{
-        return session()->get($this->bucket);
+    public function all() :array|null {
+        return session()->get($this->bucket) ?? [];
     }
 
     /**

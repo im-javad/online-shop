@@ -1,3 +1,5 @@
+@inject('basketAtViews', 'App\Support\Basket\BasketAtViews')
+
 <!-- Navbar start -->
 <div id="header-wrap">
     <header id="header">
@@ -13,7 +15,7 @@
                         <div class="main-menu stellarnav">
                             <ul class="menu-list">
                                 <li class="menu-item active"><a href="{{ route('shop.home') }}" data-effect="Home">Home</a></li>
-                                <li class="menu-item"><a href="#" class="nav-link" data-effect="Cart">Cart:(9)</a></li>
+                                <li class="menu-item"><a href="{{ route('shop.basket.index') }}" class="nav-link" data-effect="Cart">Cart:({{ $basketAtViews->countBasket()}})</a></li>
                                 <li class="menu-item"><a href="{{ route('shop.products.index') }}" class="nav-link" data-effect="Shop">Shop</a></li>
                                 <li class="menu-item"><a href="#" class="nav-link" data-effect="Contact">Contact</a></li>
                                 <li class="menu-item has-sub">

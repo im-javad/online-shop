@@ -36,9 +36,9 @@
 								<div class="item-price">${{ $product->price }}</div>
 								@if($basketAtViews->hasQuantity($product->id))
 									<div>
-										<a href="{{ route('shop.basket.add' , $product->id)}}" id="increase">+</a>
-										<span id="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
-										<a href="{{ route('shop.basket.remove' , $product->id) }}" id="decrease">-</a>
+										<a href="{{ route('shop.basket.add' , $product->id)}}" class="increase">+</a>
+										<span class="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
+										<a href="{{ route('shop.basket.remove' , $product->id) }}" class="decrease">-</a>
 									</div>	
 								@endif 
 							</figcaption>
@@ -61,9 +61,9 @@
 								<div class="item-price">${{ $product->price }}</div>
 								@if($basketAtViews->hasQuantity($product->id))
 									<div>
-										<a href="{{ route('shop.basket.add' , $product->id)}}" id="increase">+</a>
-										<span id="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
-										<a href="{{ route('shop.basket.remove' , $product->id) }}" id="decrease">-</a>
+										<a href="{{ route('shop.basket.add' , $product->id)}}" class="increase">+</a>
+										<span class="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
+										<a href="{{ route('shop.basket.remove' , $product->id) }}" class="decrease">-</a>
 									</div>	
 								@endif 
 							</figcaption>
@@ -86,9 +86,9 @@
 								<div class="item-price">${{ $product->price }}</div>
 								@if($basketAtViews->hasQuantity($product->id))
 									<div>
-										<a href="{{ route('shop.basket.add' , $product->id)}}" id="increase">+</a>
-										<span id="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
-										<a href="{{ route('shop.basket.remove' , $product->id) }}" id="decrease">-</a>
+										<a href="{{ route('shop.basket.add' , $product->id)}}" class="increase">+</a>
+										<span class="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
+										<a href="{{ route('shop.basket.remove' , $product->id) }}" class="decrease">-</a>
 									</div>	
 								@endif 
 							</figcaption>
@@ -111,9 +111,9 @@
 								<div class="item-price">${{ $product->price }}</div>
 								@if($basketAtViews->hasQuantity($product->id))
 									<div>
-										<a href="{{ route('shop.basket.add' , $product->id)}}" id="increase">+</a>
-										<span id="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
-										<a href="{{ route('shop.basket.remove' , $product->id) }}" id="decrease">-</a>
+										<a href="{{ route('shop.basket.add' , $product->id)}}" class="increase">+</a>
+										<span class="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
+										<a href="{{ route('shop.basket.remove' , $product->id) }}" class="decrease">-</a>
 									</div>	
 								@endif 	
 							</figcaption>
@@ -136,9 +136,9 @@
 								<div class="item-price">${{ $product->price }}</div>
 								@if($basketAtViews->hasQuantity($product->id))
 									<div>
-										<a href="{{ route('shop.basket.add' , $product->id)}}" id="increase">+</a>
-										<span id="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
-										<a href="{{ route('shop.basket.remove' , $product->id) }}" id="decrease">-</a>
+										<a href="{{ route('shop.basket.add' , $product->id)}}" class="increase">+</a>
+										<span class="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
+										<a href="{{ route('shop.basket.remove' , $product->id) }}" class="decrease">-</a>
 									</div>	
 								@endif 	
 							</figcaption>
@@ -161,9 +161,9 @@
 								<div class="item-price">${{ $product->price }}</div>
 								@if($basketAtViews->hasQuantity($product->id))
 									<div>
-										<a href="{{ route('shop.basket.add' , $product->id)}}" id="increase">+</a>
-										<span id="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
-										<a href="{{ route('shop.basket.remove' , $product->id) }}" id="decrease">-</a>
+										<a href="{{ route('shop.basket.add' , $product->id)}}" class="increase">+</a>
+										<span class="quantity">{{ $basketAtViews->getQuantity($product->id) }}</span>
+										<a href="{{ route('shop.basket.remove' , $product->id) }}" class="decrease">-</a>
 									</div>	
 								@endif 	
 							</figcaption>

@@ -2133,23 +2133,45 @@ a#user-status{
 #h-100-p{
   width: 27%
 }
-#increase{
+
+a.increase{
   text-decoration: none;
     font-size: 20px;
     background: #daa556;
     border-radius: 7px;
     padding: 0px 7px 1px;
 }
-#quantity{
+span.quantity{
   font-size: 25px;
   padding: 0px;
   margin: 13px;
 }
-#decrease{
+a.decrease{
   text-decoration: none;
   font-size: 20px;
   background: #daa556;
   padding: 0px 9px 1px;
   border-radius: 7px;
+}
+
+#increase-s{
+  font-size: 32px;
+  padding: 0px 10px 1px;
+}
+
+#quantity-s{
+  font-size: 40px;
+}
+
+#decrease-s{
+  font-size: 32px;
+  padding: 0px 14px 1px;
+} 
+
+p#empty-basket{
+  width: 100%;
+  font-weight: 550;
+  text-align: left;
+  color: #000000;
 }
 /*-------------------- End Extra ------------------- */

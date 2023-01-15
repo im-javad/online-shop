@@ -2,10 +2,11 @@
 namespace App\Support\Basket;
 
 use App\Models\Product;
+use App\Support\Basket\Traits\Auxiliary;
 use App\Support\Basket\Traits\Preparation;
 
 class Basket{
-    use Preparation;
+    use Preparation , Auxiliary;
 
     /**
      * Adding quantity to sessions 
@@ -44,28 +45,11 @@ class Basket{
         $this->storage->clear();
     }
 
-    /*** Auxiliary methods ***/
-
     /**
-     * Checking that the session exists 
-     *
-     * @param integer $productId
-     * @return boolean
+     * Receive selected products
      */
-    public function hasProduct(int $productId){
-        return $this->storage->exsits($productId);
-    }
-
-    /**
-     * Getting current quantity
-     *
-     * @param integer $productId
-     * @return int|null
-     */
-    public function currentQuantity(int $productId){
-        if($this->hasProduct($productId))
-            return $this->storage->getQuantity($productId);
-        return false;
+    public function selectedProducts(){
+        return $this->giveSelectedProducts();
     }
 
     /**

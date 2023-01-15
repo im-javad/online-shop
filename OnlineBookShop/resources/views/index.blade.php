@@ -72,9 +72,9 @@
 								<div class="item-price">${{ $item->price }}</div>
 								@if($basketAtViews->hasQuantity($item->id))
 									<div>
-										<a href="{{ route('shop.basket.add' , $item->id)}}" id="increase">+</a>
-										<span id="quantity">{{ $basketAtViews->getQuantity($item->id) }}</span>
-										<a href="{{ route('shop.basket.remove' , $item->id )}}" id="decrease">-</a>
+										<a href="{{ route('shop.basket.add' , $item->id)}}" class="increase">+</a>
+										<span class="quantity">{{ $basketAtViews->getQuantity($item->id) }}</span>
+										<a href="{{ route('shop.basket.remove' , $item->id )}}" class="decrease">-</a>
 									</div>	
 								@endif 	
 							</figcaption>
@@ -96,9 +96,9 @@
 								<div class="item-price">${{ $item->price }}</div>
 								@if($basketAtViews->hasQuantity($item->id))
 									<div>
-										<a href="{{ route('shop.basket.add' , $item->id)}}" id="increase">+</a>
-										<span id="quantity">{{ $basketAtViews->getQuantity($item->id) }}</span>
-										<a href="{{ route('shop.basket.remove' , $item->id )}}" id="decrease">-</a>
+										<a href="{{ route('shop.basket.add' , $item->id)}}" class="increase">+</a>
+										<span class="quantity">{{ $basketAtViews->getQuantity($item->id) }}</span>
+										<a href="{{ route('shop.basket.remove' , $item->id )}}" class="decrease">-</a>
 									</div>	
 								@endif 	
 							</figcaption>
@@ -120,9 +120,9 @@
 								<div class="item-price">${{ $item->price }}</div>
 								@if($basketAtViews->hasQuantity($item->id))
 									<div>
-										<a href="{{ route('shop.basket.add' , $item->id)}}" id="increase">+</a>
-										<span id="quantity">{{ $basketAtViews->getQuantity($item->id) }}</span>
-										<a href="{{ route('shop.basket.remove' , $item->id )}}" id="decrease">-</a>
+										<a href="{{ route('shop.basket.add' , $item->id)}}" class="increase">+</a>
+										<span class="quantity">{{ $basketAtViews->getQuantity($item->id) }}</span>
+										<a href="{{ route('shop.basket.remove' , $item->id )}}" class="decrease">-</a>
 									</div>	
 								@endif 	
 							</figcaption>

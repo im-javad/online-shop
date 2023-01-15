@@ -2,6 +2,8 @@
 
 @section('title' , 'Show Product')
 
+@inject('basketAtViews', 'App\Support\Basket\BasketAtViews')
+
 @section('content')
 <!-- Single product start -->
 <section class="bg-sand padding-large">
@@ -19,7 +21,15 @@
 					<p>
 						{{ $product->description }}
 					</p>
-					<button type="submit" name="add-to-cart" value="27545" class="button">Add to cart</button>
+					@if($basketAtViews->hasQuantity($product->id))
+						<div>
+							<a href="{{ route('shop.basket.add' , $product->id)}}" class="increase" id="increase-s">+</a>
+							<span class="quantity" id="quantity-s">{{ $basketAtViews->getQuantity($product->id) }}</span>
+							<a href="{{ route('shop.basket.remove' , $product->id) }}" class="decrease" id="decrease-s">-</a>
+						</div>	
+					@else
+						<a href="{{ route('shop.basket.add' , $product->id) }}"><button type="submit" name="add-to-cart" value="27545" class="button">Add to cart</button></a>
+					@endif 
 				</div>
 			</div>
 		</div>

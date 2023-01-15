@@ -5,6 +5,7 @@ namespace App\Support\Storage\Contract;
  * Interface implementation for classes that have storage 
  * 
  * @method int getQuantity()
+ * @method int count()
  */ 
 interface StorageInterface{
     public function all();
