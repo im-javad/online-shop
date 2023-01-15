@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Shop;
 
+use App\Exceptions\QuantityExceededException;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Support\Basket\Basket;
@@ -21,12 +22,16 @@ class BasketController extends Controller{
      * @return void
      */
     public function add(Product $product , int $quantity = 1){
-        $this->basket->add($product , $quantity);
-
-        return back();
+        try{
+            $this->basket->add($product , $quantity);
+            return back();
+        }catch(QuantityExceededException $event) {
+            return back()->with('simpleWarningAlert' , $event->getMessage());
+        }
     }
 
     public function remove(Product $product){
         $this->basket->remove($product);
     }
 }
+

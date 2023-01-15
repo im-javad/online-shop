@@ -42,6 +42,9 @@
                 <div class="col">
                     <input name="price" class="form-control" placeholder="Price" type="numeric" aria-label="price">
                 </div>
+                <div class="col">
+                    <input name="stock" class="form-control" placeholder="Stock" type="numeric" aria-label="stock">
+                </div>
             </div>
         </div>
         <div class="d-grid gap-2 col-6 mx-auto">
