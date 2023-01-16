@@ -329,6 +329,13 @@
 	border-radius: 2px;
 }
 
+#gateway{
+	width: 15%;
+    padding: 4px;
+    color: #9a4400;
+    font-weight: 600;
+}
+
 .checkout__input__checkbox label .checkmark:after {
 	position: absolute;
 	left: 1px;
@@ -435,4 +442,12 @@
 	text-decoration: initial;
 	font-weight: 700;
 	background-color: black;
+}
+
+#zero-right{
+	padding-right: 0px;
+}
+
+#zero-left{
+	padding-left: 0px;
 }
