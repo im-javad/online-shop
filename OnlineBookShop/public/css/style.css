@@ -1417,6 +1417,24 @@ img.post-image {
     color: #444;
 }
 
+span.valid-danger{
+  color: red;
+}
+
+button.logout-btn{
+  height: 28px;
+  background: #dddddd;
+  text-align: left;
+  padding: 0.75em 1em;
+  width: 100%;
+  margin: 0px 0px 0px 0px;
+  color: #777788;
+}
+
+form.logout-form{
+  margin: 0px 0px 9px;
+}
+
 /* -- Top Menu Part
 --------------------------------------------------------------*/
 .top-content {

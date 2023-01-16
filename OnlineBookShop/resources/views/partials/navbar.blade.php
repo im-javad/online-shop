@@ -20,10 +20,21 @@
                                 <li class="menu-item"><a href="#" class="nav-link" data-effect="Contact">Contact</a></li>
                                 <li class="menu-item has-sub">
                                     <a class="nav-link" data-effect="Auth">Auth</a>
-                                    <ul>
-                                        <li><a href="{{ route('register') }}">Register</a></li>
-                                        <li><a href="{{ route('login')}}">Login</a></li>
-                                     </ul>
+                                    @guest
+                                        <ul>
+                                            <li><a href="{{ route('register') }}">Register</a></li>
+                                            <li><a href="{{ route('login') }}">Login</a></li>
+                                        </ul>
+                                    @endguest
+                                    @auth
+                                        <ul>
+                                            <form action="{{ route('logout') }}" method="POST" class="logout-form">
+                                                @csrf
+                                                <button type="submit" class="logout-btn">Logout</button>
+                                            </form>
+                                            <li><a href="#">MyPanel</a></li>
+                                        </ul>
+                                    @endauth
                                 </li>
                                 <li class="menu-item"><a class="nav-link" data-effect="Contact"></a></li>
                                 <li class="menu-item"><a href="#" class="nav-link" data-effect="Contact" id="user-status">Guest</a></li>
