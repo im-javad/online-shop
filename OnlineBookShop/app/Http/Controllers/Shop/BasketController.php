@@ -82,5 +82,15 @@ class BasketController extends Controller{
 
         return redirect()->route('shop.basket.index')->with('simpleSuccessAlert' , 'Basket cleared successfully');
     }
+
+    /**
+     * Show checkout form 
+     *
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function checkoutForm(){
+        return view('checkout');
+    }
 }
+
 

@@ -81,6 +81,21 @@ class Basket{
             return $this->storage->unset($productId);
         $this->storage->set($productId , ['quantity' => $quantity]);
     }
+
+    /**
+     * Receive the total cost of the products from the shopping cart
+     *
+     * @return integer
+     */
+    public function getTotalProductsCost() :int{
+        $totalPrice = 0;
+
+        foreach($this->giveSelectedProducts() as $product){
+            $totalPrice += $product->price * $product->quantity;
+        }
+
+        return $totalPrice;
+    }
 }
 
 

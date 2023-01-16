@@ -48,7 +48,7 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="cart__price">${{ $basketAtViews->productTotal($product) }}</td>
+                                        <td class="cart__price">${{ number_format($basketAtViews->productTotal($product)) }}</td>
                                         <td><button type="submit" id="edit-quantity">Edit</button></td>
                                         </form>
                                     </tr>

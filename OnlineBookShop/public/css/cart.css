@@ -430,4 +430,9 @@
 	float: right;
 }
 
-
+#btn-summary{
+	color: white;
+	text-decoration: initial;
+	font-weight: 700;
+	background-color: black;
+}

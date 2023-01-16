@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Support\Basket\Basket;
+use App\Support\Cost\BasketCost;
+use App\Support\Cost\Contract\CostInterface;
+use App\Support\Cost\ShippingCost;
 use App\Support\Storage\Contract\StorageInterface;
 use App\Support\Storage\SessionStorage;
 use Illuminate\Support\ServiceProvider;
@@ -22,11 +26,19 @@ class AppServiceProvider extends ServiceProvider{
      * @return void
      */
     public function boot(){
-        $this->app->bind(StorageInterface::class , function($all){
+        $this->app->bind(StorageInterface::class , function($app){
             return new SessionStorage('cart');
+        });
+
+        $this->app->bind(CostInterface::class , function($app){
+            $basketCost = new BasketCost($app->make(Basket::class));
+            $shippingCost = new ShippingCost($basketCost);
+            return $shippingCost;
         });
 
         Paginator::useBootstrapFive();
         Paginator::useBootstrapFour();
     }
 }
+
+
