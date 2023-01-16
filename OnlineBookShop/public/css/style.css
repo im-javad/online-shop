@@ -2103,6 +2103,8 @@ footer#footer {
 a#user-status{
   color: #ff7100;
   font-weight: 750;
+  background: #1212121f;
+  border-radius: 100px;
 }
 
 #custom-gray{

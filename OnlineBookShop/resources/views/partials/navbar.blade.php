@@ -36,8 +36,14 @@
                                         </ul>
                                     @endauth
                                 </li>
+                                @guest
+                                    <li class="menu-item"><a class="nav-link" data-effect="Contact"></a></li>
+                                    <li class="menu-item"><a href="#" class="nav-link" data-effect="Contact" id="user-status">Guest</a></li>
+                                @endguest
+                                @auth
                                 <li class="menu-item"><a class="nav-link" data-effect="Contact"></a></li>
-                                <li class="menu-item"><a href="#" class="nav-link" data-effect="Contact" id="user-status">Guest</a></li>
+                                <li class="menu-item"><a href="#" class="nav-link" data-effect="Contact" id="user-status">{{ Auth::user()->name }}</a></li>
+                                @endauth
                             </ul>
                             <div class="hamburger">
                                 <span class="bar"></span>

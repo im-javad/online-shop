@@ -30,7 +30,7 @@
                             <input name="password_confirmation" placeholder="Confirm Password" type="password">
                         </div>
                         <div class="submit-btn-area">
-                            <button id="form_submit" type="submit">Submit</button>
+                            <button type="submit">Submit</button>
                         </div>
                         <div class="form-footer text-center mt-5">
                             <p class="text-muted">Do have an account? <a href="{{ route('login') }}">Log in</a></p>
