@@ -54,7 +54,7 @@
 					@foreach ($products->where('category_id' , 7) as $product)
 						<figure class="product-style">
 							<img src="images/products/{{ $product->demo_url }}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
+							<a href="{{ route('shop.basket.add' , $product->id) }}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button></a>
 							<figcaption>
 								<h3><a href="{{ route('shop.products.show' , $product->id ) }}">{{ $product->title }}</a></h3>
 								<p>{{ $product->author }}</p>
@@ -79,7 +79,7 @@
 					@foreach ($products->where('category_id' , '#') as $product)
 						<figure class="product-style">
 							<img src="images/products/{{ $product->demo_url }}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
+							<a href="{{ route('shop.basket.add' , $product->id) }}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button></a>
 							<figcaption>
 								<h3><a href="{{ route('shop.products.show' , $product->id ) }}">{{ $product->title }}</a></h3>
 								<p>{{ $product->author }}</p>
@@ -104,7 +104,7 @@
 					@foreach ($products->where('category_id' , 8) as $product)
 						<figure class="product-style">
 							<img src="images/products/{{ $product->demo_url }}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
+							<a href="{{ route('shop.basket.add' , $product->id) }}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button></a>
 							<figcaption>
 								<h3><a href="{{ route('shop.products.show' , $product->id ) }}">{{ $product->title }}</a></h3>
 								<p>{{ $product->author }}</p>
@@ -129,7 +129,7 @@
 					@foreach ($products->where('category_id' , '#') as $product)
 						<figure class="product-style">
 							<img src="images/products/{{ $product->demo_url }}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
+							<a href="{{ route('shop.basket.add' , $product->id) }}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button></a>
 							<figcaption>
 								<h3><a href="{{ route('shop.products.show' , $product->id ) }}">{{ $product->title }}</a></h3>
 								<p>{{ $product->author }}</p>
@@ -154,7 +154,7 @@
 					@foreach ($products->where('category_id' , 9) as $product)
 						<figure class="product-style">
 							<img src="images/products/{{ $product->demo_url }}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
+							<a href="{{ route('shop.basket.add' , $product->id) }}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button></a>
 							<figcaption>
 								<h3><a href="{{ route('shop.products.show' , $product->id ) }}">{{ $product->title }}</a></h3>
 								<p>{{ $product->author }}</p>
@@ -172,7 +172,6 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 </section>
 <!-- Shop page end -->

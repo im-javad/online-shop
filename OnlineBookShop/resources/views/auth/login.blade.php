@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
+@section('title' , 'Login')
+
 @section('content')
-    <!-- login area start -->
+<!-- login area start -->
     <div class="login-area login-s2">
         <div class="container">
             <div class="login-box ptb--100">
@@ -13,11 +15,19 @@
                     <div class="login-form-body">
                         <div class="form-gp">
                             <input name="email" type="email" placeholder="Email Address">
-                            @if($errors->has('email')) <span class="valid-danger">.{{ $errors->first('email') }}</span> @endif
+                            @error('email')
+                                <span class="valid-danger" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror  
                         </div>
                         <div class="form-gp">
                             <input name="password" type="password" placeholder="Password">
-                            @if($errors->has('password')) <span class="valid-danger">.{{ $errors->first('password') }}</span> @endif
+                            @error('password')
+                                <span class="valid-danger" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror  
                         </div>
                         <div class="row mb-4 rmber-area">
                             <div class="col-6">
@@ -26,11 +36,11 @@
                                 </div>
                             </div>
                             <div class="col-6 text">
-                                <a href="#">Forgot Password?</a>
+                                <a href="{{ route('password.request') }}">Forgot Password?</a>
                             </div>
                         </div>
                         <div class="submit-btn-area">
-                            <button type="submit">Submit <i class="ti-arrow-right"></i></button>
+                            <button type="submit">Submit</button>
                         </div>
                         <div class="form-footer text-center mt-5">
                             <p class="text-muted">Don't have an account? <a href="{{ route('register') }}">Register</a></p>
@@ -40,6 +50,6 @@
             </div>
         </div>
     </div>
-    <!-- login area end -->
+<!-- login area end -->
 @endsection
 

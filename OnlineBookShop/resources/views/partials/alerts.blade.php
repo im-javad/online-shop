@@ -7,7 +7,7 @@
         icon: 'success',
         title: "{{ session('simpleSuccessAlert')}}",
         showConfirmButton: false,
-        timer: 3000
+        timer: 4200
         })
     </script>
 @endif
