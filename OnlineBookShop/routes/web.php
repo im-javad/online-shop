@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\productController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Shop\BasketController;
+use App\Http\Controllers\Shop\CheckoutController;
 use App\Http\Controllers\Shop\MainController;
 use App\Http\Controllers\Shop\ProductController as ShopProductController;
 use Illuminate\Support\Facades\Auth;
@@ -28,7 +29,10 @@ Route::prefix('')->group(function(){
         Route::get('/{product}/remove' , [BasketController::class , 'remove'])->name('shop.basket.remove');
         Route::get('/clear' , [BasketController::class , 'clear'])->name('shop.basket.clear');
         Route::put('/update/{product}/quantity' , [BasketController::class , 'updateQuantity'])->name('shop.basket.update.quantity');
-        Route::get('/checkout' , [BasketController::class , 'checkoutForm'])->name('shop.basket.checkout.form');
+    });
+    /* For checkout */
+    Route::prefix('/checkout')->group(function(){
+        Route::get('' , [CheckoutController::class , 'checkoutForm'])->name('shop.checkout.index');
     });
 });
 

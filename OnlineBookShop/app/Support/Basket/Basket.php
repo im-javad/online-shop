@@ -1,11 +1,9 @@
 <?PhP 
 namespace App\Support\Basket;
 
-use App\Http\Requests\Shop\UpdateQuantityRequest;
 use App\Models\Product;
 use App\Support\Basket\Traits\Auxiliary;
 use App\Support\Basket\Traits\Preparation;
-use Illuminate\Http\Request;
 
 class Basket{
     use Preparation , Auxiliary;

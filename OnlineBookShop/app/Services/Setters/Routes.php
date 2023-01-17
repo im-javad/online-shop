@@ -13,12 +13,12 @@ class Routes{
         if(Route::currentRouteName() === 'shop.basket.index')
             return [
                 'name' => 'PROCEED TO CHECKOUT',
-                'route' => 'shop.basket.checkout.form'
+                'route' => 'shop.checkout.index'
             ];
-        if(Route::currentRouteName() === 'shop.basket.checkout.form')
+        if(Route::currentRouteName() === 'shop.checkout.index')
             return [
                 'name' => 'PLACE ORDER',
-                'route' => 'shop.basket.checkout.form'
+                'route' => 'shop.checkout.index'
             ];
     }
 }
