@@ -18,7 +18,13 @@
             @endforeach
                 <li>Total <span>${{ number_format($cost->getTotalCost()) }}</span></li>
         </ul>
-        <a href="{{ route($routes->view_SetRouteForSummaryBtn()['route']) }}" class="primary-btn" id="btn-summary">{{ $routes->view_SetRouteForSummaryBtn()['name'] }}</a>
+        
+        @if($routes->view_SetRouteForSummaryBtn() === 'basket')
+            <a class="primary-btn" id="btn-summary" href="{{ route('shop.checkout.index') }}">PROCEED TO CHECKOUT</a>  
+        @else
+            <a onclick="event.preventDefault();document.getElementById('checkout-form').submit()" class="primary-btn" id="btn-summary" href="">PLACE ORDER</a>  
+        @endif
+
     </div>
 </div>
 <!-- Summary end -->

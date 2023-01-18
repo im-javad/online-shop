@@ -10,40 +10,42 @@
             <div class="row">
                 <div class="col-lg-8">
                     <h6 class="checkout__title">COMPLETION OF INFORMATION</h6>
-                    <div class="col-lg-6" id="zero-left">
-                        <div class="checkout__input">
-                            <p>Email:<span>*</span></p>
-                            <input name="email" type="email">
+                    <form action="#" method="POST" id="checkout-form">
+                        <div class="col-lg-6" id="zero-left">
+                            <div class="checkout__input">
+                                <p>Email:<span>*</span></p>
+                                <input name="email" type="email">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6" id="zero-right">
-                        <div class="checkout__input">
-                            <p>Phone Number<span>*</span></p>
-                            <input name="phone_number" type="text">
+                        <div class="col-lg-6" id="zero-right">
+                            <div class="checkout__input">
+                                <p>Phone Number<span>*</span></p>
+                                <input name="phone_number" type="text">
+                            </div>
                         </div>
-                    </div>
-                    <div class="checkout__input">
-                        <p>Address(full)<span>*</span></p>
-                        <input name="address" type="text">
-                    </div>
+                        <div class="checkout__input">
+                            <p>Address(full)<span>*</span></p>
+                            <input name="address" type="text">
+                        </div>
 
-                    <h6 class="checkout__title">PAYMENT METHOD</h6>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="online-payment" id="online-payment">
-                        <label class="form-check-label" for="online-payment">Online</label>
-                    </div>
-                    <select id="gateway" class="form-check form-check-inline">
-                        <option value="paypal" selected>Pay Pal</option>
-                        <option value="wepay">WePay</option>
-                    </select>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="ofline-payment" id="ofline-payment">
-                        <label class="form-check-label" for="ofline-payment">Ofline</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="Installment-payment" id="Installment-payment" disabled>
-                        <label class="form-check-label" for="Installment-payment">Installment(Not available yet)</label>
-                    </div>
+                        <h6 class="checkout__title">PAYMENT METHOD</h6>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="method" id="online-payment">
+                            <label class="form-check-label" for="online-payment">Online</label>
+                        </div>
+                        <select id="gateway" class="form-check form-check-inline">
+                            <option value="paypal" selected>Pay Pal</option>
+                            <option value="wepay">WePay</option>
+                        </select>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="method" id="ofline-payment">
+                            <label class="form-check-label" for="ofline-payment">Ofline</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="method" id="Installment-payment" disabled>
+                            <label class="form-check-label" for="Installment-payment">Installment(Not available yet)</label>
+                        </div>
+                    </form>
                 </div>
 			@include('summary')	
             </div>

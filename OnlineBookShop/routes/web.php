@@ -5,12 +5,14 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\productController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\PaymentController as ControllersPaymentController;
 use App\Http\Controllers\Shop\BasketController;
 use App\Http\Controllers\Shop\CheckoutController;
 use App\Http\Controllers\Shop\MainController;
 use App\Http\Controllers\Shop\ProductController as ShopProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 /** Book shop routes **/
 Route::prefix('')->group(function(){

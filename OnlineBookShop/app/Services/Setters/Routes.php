@@ -11,15 +11,8 @@ class Routes{
      */
     public function view_SetRouteForSummaryBtn(){
         if(Route::currentRouteName() === 'shop.basket.index')
-            return [
-                'name' => 'PROCEED TO CHECKOUT',
-                'route' => 'shop.checkout.index'
-            ];
-        if(Route::currentRouteName() === 'shop.checkout.index')
-            return [
-                'name' => 'PLACE ORDER',
-                'route' => 'shop.checkout.index'
-            ];
+            return 'basket';
+        return 'checkout';
     }
 }
 
