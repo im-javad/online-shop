@@ -22,9 +22,8 @@
         @if($routes->view_SetRouteForSummaryBtn() === 'basket')
             <a class="primary-btn" id="btn-summary" href="{{ route('shop.checkout.index') }}">PROCEED TO CHECKOUT</a>  
         @else
-            <a onclick="event.preventDefault();document.getElementById('checkout-form').submit()" class="primary-btn" id="btn-summary" href="">PLACE ORDER</a>  
+            <a onclick="event.preventDefault();document.getElementById('checkout-form').submit()" class="primary-btn" id="btn-summary">PLACE ORDER</a>  
         @endif
-
     </div>
 </div>
 <!-- Summary end -->

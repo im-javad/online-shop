@@ -13,7 +13,6 @@ use App\Http\Controllers\Shop\ProductController as ShopProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-
 /** Book shop routes **/
 Route::prefix('')->group(function(){
     /* For main ones */
@@ -36,6 +35,12 @@ Route::prefix('')->group(function(){
     Route::prefix('/checkout')->group(function(){
         Route::get('' , [CheckoutController::class , 'checkoutForm'])->name('shop.checkout.index');
     });
+});
+
+/** Payment routes **/
+Route::prefix('/payment')->group(function(){
+    Route::post('/pay' , [ControllersPaymentController::class , 'pay'])->name('payment.pay');
+    Route::get('/{gateway}/callback' , [ControllersPaymentController::class , 'callback'])->name('payment.callback');
 });
 
 /** Routes that has admin prefix **/

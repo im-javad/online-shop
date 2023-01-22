@@ -14,12 +14,20 @@ class Product extends Model{
     /**
      * 1TON relationship between product and category
      *
-     * @return array
+     * @return array|null
      */
     public function category(){
         return $this->belongsTo(Category::class);
     }
-
+    /**
+     * NTON relationship between product and order
+     *
+     * @return array|null
+     */
+    public function orders(){
+        return $this->belongsToMany(Order::class);
+    }
+    
     /**
      * Checking stock
      *
@@ -29,6 +37,16 @@ class Product extends Model{
     public function hasStock(int $quantity){
         if($this->stock <= $quantity)
             throw new QuantityExceededException("End of stock");
+    }
+
+    /**
+     * Decrement stock quantity after register order
+     *
+     * @param integer $count
+     * @return void
+     */
+    public function decrementStock(int $count){
+        $this->decrement('stock' , $count);
     }
 }
 

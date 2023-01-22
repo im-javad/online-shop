@@ -2,23 +2,26 @@
 
 namespace App\Http\Controllers\Shop;
 
+use App\Exceptions\InvalidCost;
 use App\Http\Controllers\Controller;
+use App\Services\Shop\Traits\HasCheckout;
 
 class CheckoutController extends Controller{
-    public function __construct() {
-        $this->middleware('auth');
-    }
+    use HasCheckout;
 
     /**
      * Show checkout form 
      *
-     * @return \Illuminate\Contracts\View\View
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
      */
     public function checkoutForm(){
-        return view('checkout');
-    }
+        try{
+            $this->validationCost();
+            return view('checkout');
+        }catch(InvalidCost $event){
+            return redirect()->route('shop.basket.index');
+        }
+    }    
 }
-
-
 
 

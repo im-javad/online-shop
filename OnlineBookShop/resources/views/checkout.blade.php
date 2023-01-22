@@ -10,42 +10,75 @@
             <div class="row">
                 <div class="col-lg-8">
                     <h6 class="checkout__title">COMPLETION OF INFORMATION</h6>
-                    <form action="#" method="POST" id="checkout-form">
+                    <form action="{{ route('payment.pay') }}" method="POST" id="checkout-form">
+                    @csrf
                         <div class="col-lg-6" id="zero-left">
                             <div class="checkout__input">
                                 <p>Email:<span>*</span></p>
-                                <input name="email" type="email">
+                                <input name="email" type="email" value="{{ auth()->user()->email }}" readonly>
+                                @error('email')
+                                    <span class="valid-danger" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror  
                             </div>
                         </div>
                         <div class="col-lg-6" id="zero-right">
                             <div class="checkout__input">
                                 <p>Phone Number<span>*</span></p>
-                                <input name="phone_number" type="text">
+                                <input name="phone_number" type="text" value="{{ auth()->user()->phone_number }}" {{ (auth()->user()->phone_number) ? 'readonly' : '' }}>
+                                @error('phone_number')
+                                    <span class="valid-danger" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror  
                             </div>
                         </div>
                         <div class="checkout__input">
                             <p>Address(full)<span>*</span></p>
-                            <input name="address" type="text">
+                            <input name="address" type="text" value="{{ auth()->user()->address }}">
+                            @error('address')
+                                <span class="valid-danger" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror  
                         </div>
-
+                        <br>
                         <h6 class="checkout__title">PAYMENT METHOD</h6>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="method" id="online-payment">
+                            <input class="form-check-input" type="radio" value="online" name="method" id="online-payment" checked>
                             <label class="form-check-label" for="online-payment">Online</label>
                         </div>
-                        <select id="gateway" class="form-check form-check-inline">
-                            <option value="paypal" selected>Pay Pal</option>
-                            <option value="wepay">WePay</option>
+                        <select name="gateway" id="gateway" class="form-check form-check-inline">
+                            @error('gateway')
+                                <span class="valid-danger" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror  
+                            <option value="IDpay" selected>IDpay(persians)</option>
+                            <option value="Zarinpal">Zarinpal(persians)</option>
+                            <option value="Paypal">Pay Pal(international)</option>
+                            <option value="Wepay">WePay(international)</option>
                         </select>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="method" id="ofline-payment">
+                            <input class="form-check-input" type="radio" value="ofline" name="method" id="ofline-payment">
                             <label class="form-check-label" for="ofline-payment">Ofline</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="method" id="Installment-payment" disabled>
+                            <input class="form-check-input" type="radio" value="installment" name="method" id="Installment-payment" disabled>
                             <label class="form-check-label" for="Installment-payment">Installment(Not available yet)</label>
                         </div>
                     </form>
+                    @error('method')
+                        <span class="valid-danger" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror  
+                    @error('gateway')
+                    <span class="valid-danger" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror  
                 </div>
 			@include('summary')	
             </div>

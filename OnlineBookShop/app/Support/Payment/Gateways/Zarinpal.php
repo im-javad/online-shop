@@ -1,4 +1,7 @@
 <?PhP 
+
+// !Not yet implemented
+
 namespace App\Support\Payment\Gateways;
 
 use App\Support\Payment\Contracts\AbstractGatewayInterface;

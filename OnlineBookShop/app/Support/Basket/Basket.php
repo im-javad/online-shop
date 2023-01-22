@@ -94,6 +94,15 @@ class Basket{
 
         return $totalPrice;
     }
+
+    /**
+     * Receive all sessions
+     *
+     * @return array|null
+     */
+    public function all(){
+        return $this->storage->all();
+    }
 }
 
 
