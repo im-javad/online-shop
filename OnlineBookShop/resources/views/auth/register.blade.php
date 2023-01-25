@@ -3,7 +3,7 @@
 @section('title' , 'Register')
 
 @section('content')
-    <!-- register area start -->
+<!-- register area start -->
     <div class="login-area login-s2">
         <div class="container">
             <div class="login-box ptb--100">
@@ -51,7 +51,7 @@
             </div>
         </div>
     </div>
-    <!-- register area end -->
+<!-- register area end -->
 @endsection
 
 

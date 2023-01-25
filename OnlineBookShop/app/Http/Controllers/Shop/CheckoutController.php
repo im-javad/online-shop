@@ -17,7 +17,7 @@ class CheckoutController extends Controller{
     public function checkoutForm(){
         try{
             $this->validationCost();
-            return view('checkout');
+            return view('frontend.checkout');
         }catch(InvalidCost $event){
             return redirect()->route('shop.basket.index');
         }

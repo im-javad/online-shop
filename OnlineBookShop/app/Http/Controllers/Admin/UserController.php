@@ -18,7 +18,7 @@ class UserController extends Controller{
     public function all(){
         $users = User::paginate(10);
 
-        return view('admin.users.list' , compact('users'));
+        return view('admin.frontend.users.list' , compact('users'));
     }
 
     /**
@@ -27,7 +27,7 @@ class UserController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function create(){
-        return view('admin.users.add');
+        return view('admin.frontend.users.add');
     }
 
     /**
@@ -51,7 +51,7 @@ class UserController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function edit(User $user){
-        return view('admin.users.edit' , compact('user'));
+        return view('admin.frontend.users.edit' , compact('user'));
     }
 
     /**

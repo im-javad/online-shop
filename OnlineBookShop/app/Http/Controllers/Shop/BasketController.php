@@ -23,7 +23,7 @@ class BasketController extends Controller{
     public function index(){
         $selectedProducts = $this->basket->selectedProducts();
         
-        return view('cart' , compact('selectedProducts'));
+        return view('frontend.cart' , compact('selectedProducts'));
     }
 
     /**

@@ -18,7 +18,7 @@ class CategoryController extends Controller{
     public function index(){
         $categories = Category::paginate(10);
 
-        return view('admin.categories.index' , compact('categories'));
+        return view('admin.frontend.categories.index' , compact('categories'));
     }
   
     /**
@@ -41,7 +41,7 @@ class CategoryController extends Controller{
      * @return void
      */
     public function edit(Category $category){
-        return view('admin.categories.edit' , compact('category'));
+        return view('admin.frontend.categories.edit' , compact('category'));
     }
     
     /**

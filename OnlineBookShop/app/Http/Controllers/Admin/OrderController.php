@@ -14,7 +14,7 @@ class OrderController extends Controller{
     public function index(){
         $orders = Order::with('user')->paginate(10);
         
-        return view('admin.orders' , compact('orders'));
+        return view('admin.frontend.orders' , compact('orders'));
     }
 }
 

@@ -3,7 +3,7 @@
 @section('title' , 'Reset Password')
 
 @section('content')
-<!-- Forget password area start -->
+<!-- Reset password area start -->
     <div class="login-area login-s2">
         <div class="container">
             <div class="login-box ptb--100">
@@ -42,5 +42,5 @@
             </div>
         </div>
     </div>
-<!--Forget password area end -->
+<!--Reset password area end -->
 @endsection

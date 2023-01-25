@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Shop;
 
 use App\Http\Controllers\Controller;
-use App\Models\Product;
+use App\Services\shop\OwnerValues;
 
 class MainController extends Controller{
     /**
@@ -12,9 +12,11 @@ class MainController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function home(){
-        $someItems = Product::take(12)->get();
+        $popularCategories = ['War' , 'Historical' , 'Business']; //! The popular categories are chosen by the site admin (Treatment of interests and desires)
+        
+        $all = OwnerValues::geCategoriesWithProducts();
 
-        return view('index' , compact('someItems'));
+        return view('frontend.index' , compact('popularCategories' , 'all'));
     }
 }
 

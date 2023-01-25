@@ -20,7 +20,7 @@ class productController extends Controller{
     public function all(){
         $products = Product::with('category')->paginate(10);
 
-        return view('admin.products.list' , compact('products'));
+        return view('admin.frontend.products.list' , compact('products'));
     }
 
     /**
@@ -31,7 +31,7 @@ class productController extends Controller{
     public function create(){
         $categories = Category::all();
         
-        return view('admin.products.add' , compact('categories'));
+        return view('admin.frontend.products.add' , compact('categories'));
     }
 
     /**
@@ -57,7 +57,7 @@ class productController extends Controller{
     public function edit(Product $product){
         $categories = Category::all();
 
-        return view('admin.products.edit' , compact('product' , 'categories'));
+        return view('admin.frontend.products.edit' , compact('product' , 'categories'));
     }
 
     /**

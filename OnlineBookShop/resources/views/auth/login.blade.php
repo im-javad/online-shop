@@ -52,4 +52,3 @@
     </div>
 <!-- login area end -->
 @endsection
-

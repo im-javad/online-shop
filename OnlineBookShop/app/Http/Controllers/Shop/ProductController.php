@@ -16,11 +16,9 @@ class ProductController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request){ 
-        $products = null;
+        $all = $this->organizeProductsByCategory($request);
 
-        $products = $this->preparingProducts($request);
-
-        return view('shop' , compact('products'));
+        return view('frontend.shop' , compact('all'));
     }
 
     /**
@@ -30,7 +28,7 @@ class ProductController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function show(Product $product){
-        return view('single-product' , compact('product'));
+        return view('frontend.single-product' , compact('product'));
     }
 }
 

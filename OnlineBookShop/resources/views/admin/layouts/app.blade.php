@@ -4,6 +4,8 @@
 
 @include('partials.alerts')
 
+@include('partials.validation-errors')
+
 @yield('content')
 
 @extends('admin.layouts.footer')

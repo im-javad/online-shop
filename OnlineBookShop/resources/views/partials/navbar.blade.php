@@ -1,6 +1,6 @@
 @inject('basketAtViews', 'App\Support\Basket\BasketAtViews')
 
-<!-- Navbar start -->
+<!-- Navbar (shop) start -->
 <div id="header-wrap">
     <header id="header">
         <div class="container">
@@ -29,7 +29,7 @@
                                     @auth
                                         <ul>
                                             <form action="{{ route('logout') }}" method="POST" class="logout-form">
-                                                @csrf
+                                            @csrf
                                                 <button type="submit" class="logout-btn">Logout</button>
                                             </form>
                                             <li><a href="#">MyPanel</a></li>
@@ -41,8 +41,8 @@
                                     <li class="menu-item"><a href="#" class="nav-link" data-effect="Contact" id="user-status">Guest</a></li>
                                 @endguest
                                 @auth
-                                <li class="menu-item"><a class="nav-link" data-effect="Contact"></a></li>
-                                <li class="menu-item"><a href="#" class="nav-link" data-effect="Contact" id="user-status">{{ Auth::user()->name }}</a></li>
+                                    <li class="menu-item"><a class="nav-link" data-effect="Contact"></a></li>
+                                    <li class="menu-item"><a href="#" class="nav-link" data-effect="Contact" id="user-status">{{ Auth::user()->name }}</a></li>
                                 @endauth
                             </ul>
                             <div class="hamburger">
@@ -56,4 +56,4 @@
         </div>
     </header>
 </div>
-<!-- Navbar end -->
+<!-- Navbar (shop) end -->

@@ -14,7 +14,7 @@ class PaymentController extends Controller{
     public function index(){
         $payments = Payment::with('order')->paginate(10);
 
-        return view('admin.payments' , compact('payments'));
+        return view('admin.frontend.payments' , compact('payments'));
     }
 }
 
