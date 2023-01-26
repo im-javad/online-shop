@@ -5,10 +5,24 @@
 <div class="col-lg-4">
     <div class="cart__discount">
         <h6>Discount codes</h6>
-        <form action="#">
-            <input type="text" placeholder="Coupon code">
-            <button type="submit">Apply</button>
-        </form>
+        @if(session()->has('coupon'))
+            <form action="{{ route('coupon.destroy') }}">
+            @csrf
+                <input value="{{session()->get('coupon')->code}}" disabled>
+                <button type="submit">Remove</button>
+            </form>
+        @else()
+            <form action="{{ route('coupon.storage') }}" method="POST">
+            @csrf
+                <input type="text" name="code" placeholder="Coupon code">
+                @error('code')
+                    <span class="valid-danger" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror  
+                <button type="submit">Apply</button>
+            </form>
+        @endif
     </div>
     <div class="cart__total">
         <h6>Summary</h6>

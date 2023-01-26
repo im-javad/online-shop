@@ -2,42 +2,38 @@
 namespace App\Support\Cost;
 
 use App\Support\Cost\Contract\CostInterface;
+use App\Support\Coupon\DiscountManager;
 
-class ShippingCost implements CostInterface{
-    /* preparation */
-    public function __construct(private CostInterface $cost){ 
+class DiscountCost implements CostInterface{
+    /* Preparation */
+    public function __construct(private CostInterface $cost , private DiscountManager $discountManager){
     }
-
-    /**
-     * Shipping percentage for each purchase
-     */
-    const SHIPPING_PERCENTAGE = 1.5;
     
     /**
-     * Shipping cost only
+     * Discount cost only
      *
      * @return integer
      */
     public function getCost() :int{
-        return $this->cost->getTotalCost() / 100 * self::SHIPPING_PERCENTAGE;
+        return $this->discountManager->calculateDiscount();
     }
-
+    
     /**
      * Total of all costs
      *
      * @return integer
      */
     public function getTotalCost() :int{
-        return $this->cost->getTotalCost() + $this->getCost();
+        return $this->cost->getTotalCost() - $this->getCost();
     }
 
     /**
-     * Shipping description only
+     * Discount description only
      *
      * @return string
      */
     public function description() :string{
-        return 'Shipping Cost';
+        return 'Discount Cost';
     }
 
     /**

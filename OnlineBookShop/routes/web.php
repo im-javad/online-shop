@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\productController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\CouponController;
 use App\Http\Controllers\PaymentController as ControllersPaymentController;
 use App\Http\Controllers\Shop\BasketController;
 use App\Http\Controllers\Shop\CheckoutController;
@@ -41,6 +42,12 @@ Route::prefix('')->group(function(){
 Route::prefix('/payment')->group(function(){
     Route::post('/pay' , [ControllersPaymentController::class , 'pay'])->name('payment.pay');
     Route::get('/{gateway}/callback' , [ControllersPaymentController::class , 'callback'])->name('payment.callback');
+});
+
+/** Coupon routes **/
+Route::prefix('/coupon')->group(function(){
+    Route::post('/' , [CouponController::class , 'storage'])->name('coupon.storage');
+    Route::get('/destroy' , [CouponController::class , 'destroy'])->name('coupon.destroy');
 });
 
 /** Routes that has admin prefix **/
@@ -84,4 +91,3 @@ Route::prefix('/admin')->group(function(){
 
 /** Authentication routes **/
 Auth::routes();
-
