@@ -29,6 +29,9 @@
                         <textarea name="description" class="form-control" placeholder="Description" rows="2">{{ $product->description }}</textarea>
                     </div>
                     <div class="col">
+                        <input value="{{ $product->percent_discount }}" name="percent_discount" class="form-control" type="txt" placeholder="Percent">
+                    </div>
+                    <div class="col">
                         <input value="#" name="demo_url" class="form-control" type="file">
                         <a href="{{ config('urls.images_products_url') . $product->demo_url }}" id="current-demo">current demo</span></a>
                     </div>

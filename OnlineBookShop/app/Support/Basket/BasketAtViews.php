@@ -50,6 +50,20 @@ class BasketAtViews{
     public function productTotal(Product $product){
         return $product->price * $product->quantity;
     }
+
+    /**
+     * Calculation product price before aplly discount 
+     *
+     * @param integer $productId
+     * @return integer
+     */
+    public function beforeDiscount($productId){
+        $product = Product::find($productId);
+
+        $discountPrice = ($product->price / (100 - $product->percent_discount)) * $product->percent_discount;
+        
+        $mainPrice = $product->price + $discountPrice;
+
+        return $mainPrice;
+    }
 }
-
-

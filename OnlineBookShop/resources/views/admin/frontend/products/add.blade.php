@@ -11,7 +11,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col">
-                        <select name="category_id" class="form-control">
+                        <select name="category_id" class="form-select">
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->title }}</option>
                             @endforeach
@@ -26,6 +26,9 @@
                 <div class="row">
                     <div class="col">
                         <textarea name="description" class="form-control" placeholder="Description" rows="1"></textarea>
+                    </div>
+                    <div class="col">
+                        <input name="percent_discount" class="form-control" type="txt" placeholder="Percent">
                     </div>
                     <div class="col">
                         <input name="demo_url" class="form-control" type="file">

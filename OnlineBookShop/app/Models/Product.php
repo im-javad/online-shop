@@ -19,6 +19,7 @@ class Product extends Model{
     public function category(){
         return $this->belongsTo(Category::class);
     }
+    
     /**
      * NTON relationship between product and order
      *
@@ -26,6 +27,21 @@ class Product extends Model{
      */
     public function orders(){
         return $this->belongsToMany(Order::class);
+    }
+    
+    /**
+     * Apply changes on products price
+     *
+     * @param integer $price
+     * @return int
+     */ 
+    public function getPriceAttribute($price){
+        if($this->percent_discount){
+            $discountAmount = (int)($this->percent_discount / 100 * $price);
+            $price = $price - $discountAmount;
+        }
+
+        return $price;
     }
     
     /**

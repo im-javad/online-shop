@@ -59,23 +59,32 @@
 		<div class="title">
 			<span>Grab your opportunity</span>
 		</div>
-		<h2 class="section-title">Books with offer</h2>
+		<h2 class="section-title">Discounted Books</h2>
 	</div>
 	<div class="container">
 		<div class="row">
 			<div class="inner-content">	
 				<div class="product-list" data-aos="fade-up">
-					<div class="grid product-grid">				
-						<figure class="product-style">
-							<img src="images/product-item5.jpg" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
-							<figcaption>
-								<h3>Simple way of piece life</h3>
-								<p>Armor Ramsey</p>
-								<div class="item-price">
-								<span class="prev-price">$ 50.00</span>$ 40.00</div>
-							</figcaption>
-						</figure>			
+					<div class="grid product-grid">			
+						@foreach ($discountedBooks as $book)
+							<figure class="product-style">
+								<img src="images/products/{{ $book->demo_url }}" alt="Books" class="product-item">
+								<a href="{{ route('shop.basket.add' , $book->id) }}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button></a>
+								<figcaption>	
+									<h3><a href="{{ route('shop.products.show' , $book->id ) }}">{{ $book->title }}</a></h3>
+									<p>{{ $book->author }}</p>
+									<div class="item-price">
+									<span class="prev-price">${{number_format($basketAtViews->beforeDiscount($book->id)) }}</span>${{ $book->price }}</div>
+									@if($basketAtViews->hasQuantity($book->id))
+										<div>
+											<a href="{{ route('shop.basket.add' , $book->id)}}" class="increase">+</a>
+											<span class="quantity">{{ $basketAtViews->getQuantity($book->id) }}</span>
+											<a href="{{ route('shop.basket.remove' , $book->id )}}" class="decrease">-</a>
+										</div>	
+									@endif 	
+								</figcaption>
+							</figure>			
+						@endforeach	
 					</div>
 				</div>
 			</div>

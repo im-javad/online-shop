@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Shop;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use App\Services\shop\OwnerValues;
 
 class MainController extends Controller{
@@ -16,7 +17,9 @@ class MainController extends Controller{
         
         $all = OwnerValues::geCategoriesWithProducts();
 
-        return view('frontend.index' , compact('popularCategories' , 'all'));
+        $discountedBooks = Product::whereNotNull('percent_discount')->get();
+
+        return view('frontend.index' , compact('popularCategories' , 'all' , 'discountedBooks'));
     }
 }
 

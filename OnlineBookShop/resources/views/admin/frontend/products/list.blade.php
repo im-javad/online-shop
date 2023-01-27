@@ -17,6 +17,7 @@
                 <th>Demo</th>
                 <th>Price</th>
                 <th>Stock</th>
+                <th>Discount</th>
                 <th>Built</th>
                 <th>Action</th>
               </tr>
@@ -36,6 +37,7 @@
                   </th>
                   <th>${{ $product->price }}</th>
                   <th>{{ $product->stock }}</th>
+                  <th>{{ $product->percent_discount }}</th>
                   <th>{{ $product->created_at }}</th>
                   <th>
                     <form action="{{ route('admin.products.destroy' , $product->id) }}" method="POST" id="prepare-form">

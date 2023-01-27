@@ -20,6 +20,7 @@ trait HasProduct{
             'demo_url' => 'required | image | mimes:png,jpg,jpeg,jfif | max:2048',
             'price' => 'required | numeric | max:1000000000',
             'stock' => 'required | numeric | max:100000',
+            'percent_discount' => 'numeric | min:1 | max:99',
             'author' => 'required | string | min:3 | max:45'
         ]);
     }
@@ -38,6 +39,7 @@ trait HasProduct{
             'demo_url' => 'nullable | image | mimes:png,jpg,jpeg,jfif | max:2048',
             'price' => 'required | numeric | max:1000000000',
             'stock' => 'required | numeric | max:100000',
+            'percent_discount' => 'numeric | min:1 | max:99',
             'author' => 'required | string | min:3 | max:45'
         ]);
     }
@@ -58,6 +60,7 @@ trait HasProduct{
                 'demo_url' => $image_path,
                 'price' => $validator['price'],
                 'stock' => $validator['stock'],
+                'percent_discount' => $validator['percent_discount'],
                 'author' => $validator['author'],
             ]);
         }catch(\Throwable $th){
@@ -79,6 +82,7 @@ trait HasProduct{
             'description' => $validator['description'],
             'price' => $validator['price'],
             'stock' => $validator['stock'],
+            'percent_discount' => $validator['percent_discount'],
             'author' => $validator['author'],
         ]);
 
@@ -91,4 +95,3 @@ trait HasProduct{
         }
     }
 }
-
