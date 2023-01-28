@@ -20,7 +20,7 @@ trait HasProduct{
             'demo_url' => 'required | image | mimes:png,jpg,jpeg,jfif | max:2048',
             'price' => 'required | numeric | max:1000000000',
             'stock' => 'required | numeric | max:100000',
-            'percent_discount' => 'numeric | min:1 | max:99',
+            'percent_discount' => 'nullable',
             'author' => 'required | string | min:3 | max:45'
         ]);
     }
@@ -39,7 +39,7 @@ trait HasProduct{
             'demo_url' => 'nullable | image | mimes:png,jpg,jpeg,jfif | max:2048',
             'price' => 'required | numeric | max:1000000000',
             'stock' => 'required | numeric | max:100000',
-            'percent_discount' => 'numeric | min:1 | max:99',
+            'percent_discount' => 'nullable',
             'author' => 'required | string | min:3 | max:45'
         ]);
     }

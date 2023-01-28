@@ -13,7 +13,7 @@ class MainController extends Controller{
      * @return \Illuminate\Http\Response
      */
     public function home(){
-        $popularCategories = ['War' , 'Historical' , 'Business']; //! The popular categories are chosen by the site admin (Treatment of interests and desires)
+        $popularCategories = ['War' , 'Historical' , 'Psychology']; //! The popular categories are chosen by the site admin (Treatment of interests and desires)
         
         $all = OwnerValues::geCategoriesWithProducts();
 
