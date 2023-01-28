@@ -30,3 +30,19 @@ See database design => https://dbdiagram.io/d/63b47ef47d39e42284e8b550
 * The admin in the admin panel can manage payments and orders.
 
 ## Demo
+
+Main page_1      |  Main page_2
+:------------------------:|:-------------------------:
+![](withDemo/Main/Main_1.png)  |  ![](withDemo/Main/Main_2.png)
+
+Cart     |  Checkout
+:------------------------:|:-------------------------:
+![](withDemo/Main/Cart.png)  |  ![](withDemo/Main/Checkout.png)
+
+Shopping     |  Registration and authorization
+:------------------------:|:-------------------------:
+![](withDemo/Main/Shop.png)  |  ![](withDemo/auth/Register.png)
+
+Log in    |  Reset password
+:------------------------:|:-------------------------:
+![](withDemo/auth/Login.png)  |  ![](withDemo/auth/forgetPassword.png)
