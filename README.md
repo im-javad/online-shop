@@ -51,3 +51,4 @@ Shopping
 Login    |  Register | ResetPass
 :------------------------:|:-------------------------:|:-------------------------:
 ![](withDemo/auth/Login.png) |  ![](withDemo/auth/Register.png) |  ![](withDemo/auth/forgetPassword.png)
+
