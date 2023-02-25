@@ -31,7 +31,6 @@ See database design => https://dbdiagram.io/d/63b47ef47d39e42284e8b550
 * Users can pay their order online(with gateway) and offline and receive order information by email.
 
 ## Demo
-
 Main page
 :------------------------:
 ![](withDemo/Main/Main_1.png)    ![](withDemo/Main/Main_2.png)
